@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CarMain : MonoBehaviour
+public class Checkpoint1 : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()

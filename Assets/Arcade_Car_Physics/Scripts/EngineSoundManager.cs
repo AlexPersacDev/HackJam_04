@@ -7,8 +7,6 @@
 using UnityEngine;
 
 namespace VehicleBehaviour {
-    [RequireComponent(typeof(MovementSystem))]
-    [RequireComponent(typeof(AudioSource))]
 
     public class EngineSoundManager : MonoBehaviour {
 

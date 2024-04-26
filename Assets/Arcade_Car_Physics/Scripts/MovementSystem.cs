@@ -4,17 +4,9 @@
  * This is distributed under the MIT Licence (see LICENSE.md for details)
  */
 
-using System.Runtime.CompilerServices;
 using UnityEngine;
+using VehicleBehaviour;
 
-#if MULTIOSCONTROLS
-    using MOSC;
-#endif
-
-[assembly: InternalsVisibleTo("VehicleBehaviour.Dots")]
-namespace VehicleBehaviour 
-{
-    [RequireComponent(typeof(Rigidbody))]
     public class MovementSystem : MonoBehaviour 
     {
         [SerializeField]
@@ -23,7 +15,7 @@ namespace VehicleBehaviour
 
         // Input names to read using GetAxis
         [SerializeField] internal VehicleInputs m_Inputs;
-        string throttleInput => m_Inputs.ThrottleInput + playerNumber;
+        string moveInput => m_Inputs.ThrottleInput + playerNumber;
         string brakeInput => m_Inputs.BrakeInput + playerNumber;
         string turnInput => m_Inputs.TurnInput + playerNumber;
         string jumpInput => m_Inputs.JumpInput + playerNumber;
@@ -211,163 +203,163 @@ namespace VehicleBehaviour
         internal WheelCollider[] wheels = new WheelCollider[0];
 
         // Init rigidbody, center of mass, wheels and more
-        void Start() {
-#if MULTIOSCONTROLS
-            Debug.Log("[ACP] Using MultiOSControls");
-#endif
-            if (boostClip != null) {
-                boostSource.clip = boostClip;
-            }
-
-		    boost = maxBoost;
-
-            rb = GetComponent<Rigidbody>();
-            spawnPosition = transform.position;
-            spawnRotation = transform.rotation;
-
-            if (rb != null && centerOfMass != null)
-            {
-                rb.centerOfMass = centerOfMass.localPosition;
-            }
-
-            wheels = GetComponentsInChildren<WheelCollider>();
-
-            // Set the motor torque to a non null value because 0 means the wheels won't turn no matter what
-            foreach (WheelCollider wheel in wheels)
-            {
-                wheel.motorTorque = 0.0001f;
-            }
-        }
-
-        // Visual feedbacks and boost regen
-        void Update()
+    void Start() 
+    {
+        if (boostClip != null) 
         {
-            foreach (ParticleSystem gasParticle in gasParticles)
-            {
-                gasParticle.Play();
-                ParticleSystem.EmissionModule em = gasParticle.emission;
-                em.rateOverTime = handbrake ? 0 : Mathf.Lerp(em.rateOverTime.constant, Mathf.Clamp(150.0f * throttle, 30.0f, 100.0f), 0.1f);
-            }
-
-            if (allowBoost) {
-                boost += Time.deltaTime * boostRegen;
-                if (boost > maxBoost) { boost = maxBoost; }
-            }
+                boostSource.clip = boostClip;
         }
-        
-        // Update everything
-        void FixedUpdate () {
-            // Mesure current speed
-            speed = transform.InverseTransformDirection(rb.velocity).z * 3.6f;
 
-            // Get all the inputs!
-            // Accelerate & brake
-            if (throttleInput != "" && throttleInput != null)
-            {
-                throttle = GetInput(throttleInput) - GetInput(brakeInput);
-            }
-            // Boost
-            boosting = (GetInput(boostInput) > 0.5f);
-            // Turn
-            steering = turnInputCurve.Evaluate(GetInput(turnInput)) * steerAngle;
-            // Dirft
-            drift = GetInput(driftInput) > 0 && rb.velocity.sqrMagnitude > 100;
-            // Jump
-            jumping = GetInput(jumpInput) != 0;
+		boost = maxBoost;
+
+        rb = GetComponent<Rigidbody>();
+        spawnPosition = transform.position;
+        spawnRotation = transform.rotation;
+
+        if (rb != null && centerOfMass != null)
+        {
+            rb.centerOfMass = centerOfMass.localPosition;
+        }
+
+        wheels = GetComponentsInChildren<WheelCollider>();
+
+        // Set the motor torque to a non null value because 0 means the wheels won't turn no matter what
+        foreach (WheelCollider wheel in wheels)
+        {
+            wheel.motorTorque = 0.0001f;
+        }
+    }
+
+    // Visual feedbacks and boost regen
+    void Update()
+    {
+        foreach (ParticleSystem gasParticle in gasParticles)
+        {
+            gasParticle.Play();
+            ParticleSystem.EmissionModule em = gasParticle.emission;
+            em.rateOverTime = handbrake ? 0 : Mathf.Lerp(em.rateOverTime.constant, Mathf.Clamp(150.0f * throttle, 30.0f, 100.0f), 0.1f);
+        }
+
+        if (allowBoost) {
+            boost += Time.deltaTime * boostRegen;
+            if (boost > maxBoost) { boost = maxBoost; }
+        }
+    }
+        
+    // Update everything
+    void FixedUpdate () 
+    {
+        // Mesure current speed
+        speed = transform.InverseTransformDirection(rb.velocity).z * 3.6f;
+
+        // Get all the inputs!
+        // Accelerate & brake
+        if (moveInput != "" && moveInput != null)
+        {
+            throttle = GetInput(moveInput) - GetInput(brakeInput);
+        }
+        // Boost
+        boosting = (GetInput(boostInput) > 0.5f);
+        // Turn
+        steering = turnInputCurve.Evaluate(GetInput(turnInput)) * steerAngle;
+        // Dirft
+        drift = GetInput(driftInput) > 0 && rb.velocity.sqrMagnitude > 100;
+        // Jump
+        jumping = GetInput(jumpInput) != 0;
             
 
-            // Direction
-            foreach (WheelCollider wheel in turnWheel)
-            {
-                wheel.steerAngle = Mathf.Lerp(wheel.steerAngle, steering, steerSpeed);
-            }
+        // Direction
+        foreach (WheelCollider wheel in turnWheel)
+        {
+            wheel.steerAngle = Mathf.Lerp(wheel.steerAngle, steering, steerSpeed);
+        }
 
+        foreach (WheelCollider wheel in wheels)
+        {
+            wheel.motorTorque = 0.0001f;
+            wheel.brakeTorque = 0;
+        }
+
+        // Handbrake
+        if (handbrake)
+        {
             foreach (WheelCollider wheel in wheels)
             {
+                // Don't zero out this value or the wheel completly lock up
                 wheel.motorTorque = 0.0001f;
-                wheel.brakeTorque = 0;
+                wheel.brakeTorque = brakeForce;
             }
-
-            // Handbrake
-            if (handbrake)
-            {
-                foreach (WheelCollider wheel in wheels)
-                {
-                    // Don't zero out this value or the wheel completly lock up
-                    wheel.motorTorque = 0.0001f;
-                    wheel.brakeTorque = brakeForce;
-                }
-            }
-            else if (throttle != 0 && (Mathf.Abs(speed) < 4 || Mathf.Sign(speed) == Mathf.Sign(throttle)))
-            {
-                foreach (WheelCollider wheel in driveWheel)
-                {
-                    wheel.motorTorque = throttle * motorTorque.Evaluate(speed) * diffGearing / driveWheel.Length;
-                }
-            }
-            else if (throttle != 0)
-            {
-                foreach (WheelCollider wheel in wheels)
-                {
-                    wheel.brakeTorque = Mathf.Abs(throttle) * brakeForce;
-                }
-            }
-
-            // Jump
-            if (jumping) 
-            {
-                if (!IsGrounded)
-                    return;
-                
-                rb.velocity += transform.up * jumpVel;
-            }
-
-            // Boost
-            if (boosting && allowBoost && boost > 0.1f) {
-                rb.AddForce(transform.forward * boostForce);
-
-                boost -= Time.fixedDeltaTime;
-                if (boost < 0f) { boost = 0f; }
-
-                if (boostParticles.Length > 0 && !boostParticles[0].isPlaying) {
-                    foreach (ParticleSystem boostParticle in boostParticles) {
-                        boostParticle.Play();
-                    }
-                }
-
-                if (boostSource != null && !boostSource.isPlaying) {
-                    boostSource.Play();
-                }
-            } else {
-                if (boostParticles.Length > 0 && boostParticles[0].isPlaying) {
-                    foreach (ParticleSystem boostParticle in boostParticles) {
-                        boostParticle.Stop();
-                    }
-                }
-
-                if (boostSource != null && boostSource.isPlaying) {
-                    boostSource.Stop();
-                }
-            }
-
-            // Drift
-            if (drift && allowDrift) {
-                Vector3 driftForce = -transform.right;
-                driftForce.y = 0.0f;
-                driftForce.Normalize();
-
-                if (steering != 0)
-                    driftForce *= rb.mass * speed/7f * throttle * steering/steerAngle;
-                Vector3 driftTorque = transform.up * 0.1f * steering/steerAngle;
-
-
-                rb.AddForce(driftForce * driftIntensity, ForceMode.Force);
-                rb.AddTorque(driftTorque * driftIntensity, ForceMode.VelocityChange);             
-            }
-            
-            // Downforce
-            rb.AddForce(-transform.up * speed * downforce);
         }
+        else if (throttle != 0 && (Mathf.Abs(speed) < 4 || Mathf.Sign(speed) == Mathf.Sign(throttle)))
+        {
+            foreach (WheelCollider wheel in driveWheel)
+            {
+                wheel.motorTorque = throttle * motorTorque.Evaluate(speed) * diffGearing / driveWheel.Length;
+            }
+        }
+        else if (throttle != 0)
+        {
+            foreach (WheelCollider wheel in wheels)
+            {
+                wheel.brakeTorque = Mathf.Abs(throttle) * brakeForce;
+            }
+        }
+
+        // Jump
+        if (jumping) 
+        {
+            if (!IsGrounded)
+                return;
+                
+            rb.velocity += transform.up * jumpVel;
+        }
+
+        // Boost
+        if (boosting && allowBoost && boost > 0.1f) {
+            rb.AddForce(transform.forward * boostForce);
+
+            boost -= Time.fixedDeltaTime;
+            if (boost < 0f) { boost = 0f; }
+
+            if (boostParticles.Length > 0 && !boostParticles[0].isPlaying) {
+                foreach (ParticleSystem boostParticle in boostParticles) {
+                    boostParticle.Play();
+                }
+            }
+
+            if (boostSource != null && !boostSource.isPlaying) {
+                boostSource.Play();
+            }
+        } else {
+            if (boostParticles.Length > 0 && boostParticles[0].isPlaying) {
+                foreach (ParticleSystem boostParticle in boostParticles) {
+                    boostParticle.Stop();
+                }
+            }
+
+            if (boostSource != null && boostSource.isPlaying) {
+                boostSource.Stop();
+            }
+        }
+
+        // Drift
+        if (drift && allowDrift) {
+            Vector3 driftForce = -transform.right;
+            driftForce.y = 0.0f;
+            driftForce.Normalize();
+
+            if (steering != 0)
+                driftForce *= rb.mass * speed/7f * throttle * steering/steerAngle;
+            Vector3 driftTorque = transform.up * 0.1f * steering/steerAngle;
+
+
+            rb.AddForce(driftForce * driftIntensity, ForceMode.Force);
+            rb.AddTorque(driftTorque * driftIntensity, ForceMode.VelocityChange);             
+        }
+            
+        // Downforce
+        rb.AddForce(-transform.up * speed * downforce);
+    }
 
         // Reposition the car to the start position
         public void ResetPos() {
@@ -389,12 +381,12 @@ namespace VehicleBehaviour
 #endif
 
         // Use this method if you want to use your own input manager
-        private float GetInput(string input) {
+    private float GetInput(string input) 
+    {
 #if MULTIOSCONTROLS
         return MultiOSControls.GetValue(input, playerId);
 #else
         return Input.GetAxis(input);
 #endif
-        }
     }
 }
