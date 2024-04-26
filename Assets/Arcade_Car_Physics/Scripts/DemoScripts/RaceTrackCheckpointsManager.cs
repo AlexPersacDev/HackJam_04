@@ -19,7 +19,7 @@ public class RaceTrackCheckpointsManager : MonoBehaviour
     [FormerlySerializedAs("_ghost")] [SerializeField] Ghost ghost = default;
     GhostRecorder recorder = default;
 
-    void StartRace(WheelVehicle vehicle)
+    void StartRace(MovementSystem vehicle)
     {
         startTime = Time.realtimeSinceStartup;
 
@@ -50,7 +50,7 @@ public class RaceTrackCheckpointsManager : MonoBehaviour
         {   // This is the finish
             Debug.Log(Time.realtimeSinceStartup - startTime);
 
-            WheelVehicle vehicle = other.GetComponentInParent<WheelVehicle>();
+            MovementSystem vehicle = other.GetComponentInParent<MovementSystem>();
 
             recorder.Stop();
             recorder.Save(vehicle.name);
@@ -62,7 +62,7 @@ public class RaceTrackCheckpointsManager : MonoBehaviour
         }
         else if (checkPoints[0] == cpEvent && lastCp != 1)
         {   // This is the start
-            StartRace(other.GetComponentInParent<WheelVehicle>());
+            StartRace(other.GetComponentInParent<MovementSystem>());
         }
         else if (lastCp < checkPoints.Length && checkPoints[lastCp] == cpEvent)
         {   // This is the next logical CP

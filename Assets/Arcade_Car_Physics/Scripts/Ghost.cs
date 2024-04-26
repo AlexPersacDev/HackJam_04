@@ -59,7 +59,7 @@ namespace VehicleBehaviour
 		{ internal set; get;}
 
 		// Ref to the WheelVehicle
-		WheelVehicle vehicle;
+		MovementSystem vehicle;
 		// Ref to the Rigidbody
 		Rigidbody rb;
 		
@@ -72,7 +72,7 @@ namespace VehicleBehaviour
 			LoadData();
 
 			// GetComponents
-			vehicle = GetComponent<WheelVehicle>();
+			vehicle = GetComponent<MovementSystem>();
 			rb = GetComponent<Rigidbody>();
 		}
 		
@@ -185,7 +185,7 @@ namespace VehicleBehaviour
 	public class GhostRecorder 
 	{
 		// Components
-		WheelVehicle vehicle = null;
+		MovementSystem vehicle = null;
 		Transform vehicleT = null;
 		Rigidbody vehicleR = null;
 
@@ -206,7 +206,7 @@ namespace VehicleBehaviour
 		public float score;
 
 		// Constructor setting up the recorder
-		public GhostRecorder(float duration, int freq, ref WheelVehicle vehicle)
+		public GhostRecorder(float duration, int freq, ref MovementSystem vehicle)
 		{
 			this.vehicle = vehicle;
 			vehicleT = vehicle.transform;

@@ -15,7 +15,7 @@ using UnityEngine;
 namespace VehicleBehaviour 
 {
     [RequireComponent(typeof(Rigidbody))]
-    public class WheelVehicle : MonoBehaviour 
+    public class MovementSystem : MonoBehaviour 
     {
         [SerializeField]
         private string playerNumber;

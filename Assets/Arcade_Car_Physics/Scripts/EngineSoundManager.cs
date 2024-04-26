@@ -7,7 +7,7 @@
 using UnityEngine;
 
 namespace VehicleBehaviour {
-    [RequireComponent(typeof(WheelVehicle))]
+    [RequireComponent(typeof(MovementSystem))]
     [RequireComponent(typeof(AudioSource))]
 
     public class EngineSoundManager : MonoBehaviour {
@@ -25,11 +25,11 @@ namespace VehicleBehaviour {
         public float pitchSpeed = 0.05f;
 
         private AudioSource source;
-        private WheelVehicle vehicle;
+        private MovementSystem vehicle;
         
         void Start () {
             source = GetComponent<AudioSource>();
-            vehicle = GetComponent<WheelVehicle>();
+            vehicle = GetComponent<MovementSystem>();
         }
         
         void Update () {

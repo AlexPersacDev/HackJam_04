@@ -27,7 +27,7 @@ namespace VehicleBehaviour.Trails
 		public Vector3 offset;
 
 		WheelCollider wheel;
-		WheelVehicle vehicle;
+		MovementSystem vehicle;
 
 		//Checks if the most recent trail is active or not
 		public bool Active => (trails.Count == 0?false:(!trails.Last.Value.Finished));
@@ -35,7 +35,7 @@ namespace VehicleBehaviour.Trails
 		void Start () {
 			wheel = GetComponent<WheelCollider> ();
 
-			vehicle = GetComponentInParent<WheelVehicle>();
+			vehicle = GetComponentInParent<MovementSystem>();
 
 			if (vehicle == null)
 				Debug.LogWarning("Tire trail couldn't find parent vehicle");

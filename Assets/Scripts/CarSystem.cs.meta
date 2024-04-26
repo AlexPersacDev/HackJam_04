@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Assets/Plugins/Interfaces/IInteractuable.cs.meta
-guid: 981fe592dbb9d814daff892ca3870561
-========
-guid: 4193733a8c6379d48bc9468c947e3991
->>>>>>>> Fernando:Assets/MyWheel.cs.meta
+guid: c0edce6e75f2ab7499b0319479a45d58
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
