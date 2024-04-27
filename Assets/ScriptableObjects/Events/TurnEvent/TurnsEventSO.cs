@@ -4,7 +4,7 @@ using UnityEngine;
 [CreateAssetMenu (menuName = "Turns Event")]
 public class TurnsEventSO : ScriptableObject
 {
-    private Player[] playersInGame;
+    private Player[] playersInGame = Array.Empty<Player>();
 
     public event Action OnChangeTurn;
     private void OnEnable ()
