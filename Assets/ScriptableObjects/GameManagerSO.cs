@@ -48,8 +48,8 @@ public class GameManagerSO : ScriptableObject
     }
     private void RecivePlayerInGame (PlayerSelector playerrecived)
     {
-        if (!players.Contains(playerrecived)) players.Add(playerrecived); ;
-        
+        if (!players.Contains(playerrecived)) players.Add(playerrecived);
+        turnEvent.FillPlayersInGame(playerrecived);
     }
     public void PlayerPassedCheckPoint(CarMain car)
     {
