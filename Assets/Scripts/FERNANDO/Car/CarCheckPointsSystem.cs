@@ -31,7 +31,7 @@ public class CarCheckPointsSystem : CarSystem
 
     private void Update()
     {
-        if(nextCheckPoint)
+        if (nextCheckPoint)
         {
             remainingDistanceToNextCheck = Vector3.Distance(transform.position, nextCheckPoint.transform.position);
             main.GM.UpdateRanking();
