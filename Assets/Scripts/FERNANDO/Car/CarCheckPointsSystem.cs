@@ -71,7 +71,7 @@ public class CarCheckPointsSystem : CarSystem
         main.NewLapPassed();
         if(lapsPassed == main.GM.TotalLaps)
         {
-            Debug.Log("WIIIIIIIN");
+            main.GM.Winner(main);
         }
     }
 }

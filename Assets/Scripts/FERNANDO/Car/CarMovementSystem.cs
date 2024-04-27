@@ -228,6 +228,7 @@ public class CarMovementSystem : CarSystem
     Rigidbody rb = default;
     internal WheelCollider[] wheels = new WheelCollider[0];
 
+    private bool movementDisable;
     protected override void Awake()
     {
         base.Awake();
@@ -286,20 +287,24 @@ public class CarMovementSystem : CarSystem
         // Mesure current speed
         speed = transform.InverseTransformDirection(rb.velocity).z * 3.6f;
 
-        // Get all the inputs!
-        // Accelerate & brake
-        if (moveInput != "" && moveInput != null)
+        if(!movementDisable)
         {
-            throttle = GetInput(moveInput) - GetInput(brakeInput);
+            // Get all the inputs!
+            // Accelerate & brake
+            if (moveInput != "" && moveInput != null)
+            {
+                throttle = GetInput(moveInput) - GetInput(brakeInput);
+            }
+            // Boost
+            boosting = (GetInput(boostInput) > 0.5f);
+            // Turn
+            steering = turnInputCurve.Evaluate(GetInput(turnInput)) * steerAngle;
+            // Dirft
+            drift = GetInput(driftInput) > 0 && rb.velocity.sqrMagnitude > 100;
+            // Jump
+            jumping = GetInput(jumpInput) != 0;
+
         }
-        // Boost
-        boosting = (GetInput(boostInput) > 0.5f);
-        // Turn
-        steering = turnInputCurve.Evaluate(GetInput(turnInput)) * steerAngle;
-        // Dirft
-        drift = GetInput(driftInput) > 0 && rb.velocity.sqrMagnitude > 100;
-        // Jump
-        jumping = GetInput(jumpInput) != 0;
 
 
         // Direction
@@ -433,5 +438,12 @@ public class CarMovementSystem : CarSystem
 #else
         return Input.GetAxis(input);
 #endif
+    }
+
+    private void OnDisable()
+    {
+        rb.velocity = Vector3.zero;
+        rb.isKinematic = true;
+        movementDisable = true;
     }
 }
