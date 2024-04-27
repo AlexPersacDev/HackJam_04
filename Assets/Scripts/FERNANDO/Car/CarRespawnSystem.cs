@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class CarRespawnSystem : CarSystem
 {
-    private Transform lastSpawnPosition; //El primero es la propia meta.
-    
-    private int sceneriesDetected = 0;
+    private Vector3 lastSpawnPosition; //El primero es la propia meta.
+
 
     [SerializeField]
     private float checkRateTime;
@@ -31,13 +30,12 @@ public class CarRespawnSystem : CarSystem
     {
         if(other.TryGetComponent(out Checkpoint checkPoint))
         {
-            lastSpawnPosition = checkPoint.SpawnLocation;
+            lastSpawnPosition = checkPoint.SpawnLocation.position;
         }
         else if(other.CompareTag("Ground"))
         {
             StartCoroutine(Check());
         }
-        else if (other.CompareTag("Scenery")) sceneriesDetected++;
     }
 
     private IEnumerator Check()
@@ -63,8 +61,8 @@ public class CarRespawnSystem : CarSystem
     {
         rb.velocity = Vector3.zero;
         rb.isKinematic = true;
-        rb.rotation = lastSpawnPosition.rotation;
-        rb.position = lastSpawnPosition.position;
+        rb.rotation = Quaternion.identity;
+        rb.position = lastSpawnPosition;
         Invoke(nameof(BackToDynamic), recoverTime);
         StopAllCoroutines();
     }
@@ -78,8 +76,6 @@ public class CarRespawnSystem : CarSystem
     {
         if(collision.CompareTag("Scenery"))
         {
-            sceneriesDetected--;
-            if (sceneriesDetected > 0) return;
             ResetCar();
         }
     }
