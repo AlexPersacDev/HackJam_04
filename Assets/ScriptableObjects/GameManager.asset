@@ -13,6 +13,5 @@ MonoBehaviour:
   m_Name: GameManager
   m_EditorClassIdentifier: 
   totalCheckPoints: 4
-  totalLaps: 0
-  eventManager: {fileID: 11400000, guid: 5e07ddc0355d6a844b58367a64796b74, type: 2}
+  totalLaps: 3
   turnEvent: {fileID: 11400000, guid: 6759599ba1181b2479a2215ef9b82f05, type: 2}

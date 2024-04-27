@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CarSpawnSystem : CarSystem
+public class CarRespawnSystem : CarSystem
 {
     private Vector3 lastSpawnPosition; //El primero es la propia meta.
 
