@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Ingredient : MonoBehaviour, IInteractuable
 {
+
+
     [SerializeField] private IngredientsSO ingredient;
 
     public static event Action<IngredientsSO> OnIngredientSelected;
@@ -12,5 +14,10 @@ public class Ingredient : MonoBehaviour, IInteractuable
     {
         gameObject.SetActive(false);
         OnIngredientSelected?.Invoke(ingredient);
+    }
+
+    private void OnMouseDown ()
+    {
+        ((IInteractuable)this).Interact();
     }
 }

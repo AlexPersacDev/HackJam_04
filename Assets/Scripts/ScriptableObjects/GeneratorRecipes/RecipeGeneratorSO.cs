@@ -5,35 +5,38 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "RecipeGenerator", menuName = "RecipeGenerator")]
 public class RecipeGeneratorSO : ScriptableObject
 {
-    [SerializeField] private List<IngredientsSO> ingredients;
+    [SerializeField] private List<IngredientsSO> allIngredients;
     [SerializeField] private RecipeBookSO recipeBook;
     
-    
-    private List<IngredientsSO> usedIngredients;
-    private void OnEnable ()
+    private List<RecipeSO> allRecipes = new List<RecipeSO>();
+
+    private List<RecipeSO> allCombinations = new List<RecipeSO>();
+    private void OnEnable()
     {
         GenerateRecepies();
     }
 
     private void GenerateRecepies ()
     {
-        int recipes = 0;
-        for (int i = 0; i < ingredients.Count; i++)
-        {
-            usedIngredients.Add(ingredients[i]);
-            for (int j = 0; j < ingredients.Count; j++)
-            {
-                if (usedIngredients.Contains(ingredients[j])) continue;
-                for (int k = 0; k < ingredients.Count; k++)
-                {
-                    if (usedIngredients.Contains(ingredients[k]) || ingredients[k] == ingredients[j]) continue;
-                    Debug.Log(ingredients[i] + "///" + ingredients[j] + "///" + ingredients[k]);
-                    recipes++;
-                    //recipeBook.AddNewRecipe(new IngredientsSO[]{ingredients[i], ingredients[j], ingredients[k]});
-                }
-            }
-        }
-        Debug.Log(recipes);
+        //int recipeIndex = 0;
+        //for (int i = 0; i < allIngredients.Count; i++)
+        //{
+            
+        //    for (int j = 0; j < allIngredients.Count; j++)
+        //    {
+        //        for (int k = 0; k < allIngredients.Count; k++)
+        //        {
+        //            allCombinations[recipeIndex].RequiredIngredients
+        //            allRecipes[recipeIndex].RequiredIngredients
+                    
+                        
+        //                Debug.Log(allIngredients[i].IngredientName + "-" + allIngredients[j].IngredientName + "-" + allIngredients[k].IngredientName);
+        //            recipeIndex++;
+        //            //recipeBook.AddNewRecipe(new IngredientsSO[]{ingredients[i], ingredients[j], ingredients[k]});
+        //        }
+        //    }
+        //}
+        //Debug.Log(recipeIndex);
         
         // foreach (IngredientsSO ingredientOne in ingredients)
         // {
@@ -49,5 +52,10 @@ public class RecipeGeneratorSO : ScriptableObject
         //         }
         //     }
         // }
+    }
+
+    private void OnDisable()
+    {
+        //usedIngredients.Clear();
     }
 }

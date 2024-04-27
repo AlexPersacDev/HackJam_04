@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08201cc65de07d8459bf39db7b6910d4, type: 3}
   m_Name: Dinosaur
   m_EditorClassIdentifier: 
-  name: 
+  ingredientName: Dinosaur
+  rank: 3
