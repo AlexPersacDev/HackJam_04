@@ -6,20 +6,25 @@ using System.Linq;
 
 public class PlayerSelector : MonoBehaviour
 {
+<<<<<<< HEAD
     [SerializeField] private GameManagerSO gM;
     [SerializeField] private PlayerSO player;
+=======
+    [SerializeField] private PlayerSO myPlayer;
+>>>>>>> 73cc25048a39cf66431eb54ae4c560a4c7db9e2d
     
     private List<IngredientsSO> selectedIngredients = new List<IngredientsSO>();
 
     private int badScore, goodScore;
-
+    public bool InTurn => myPlayer.InTurn;
+    
     public static event Action<PlayerSelector> OnStartGame;
 
     public event Action OnTurnConsumed;
 
     private void OnEnable ()
     {
-        OnStartGame?.Invoke(this);
+        myPlayer.GetPlayerSelector(this);
         Ingredient.OnIngredientSelected += ReciveIngredient;
     }
 
@@ -28,8 +33,17 @@ public class PlayerSelector : MonoBehaviour
         Ingredient.OnIngredientSelected -= ReciveIngredient;
     }
 
+
+    public void SwitchInTurn (bool ImInTurn)
+    {
+        myPlayer.SwitchInTurn(ImInTurn);
+    }
     private void ReciveIngredient (IngredientsSO ingredientRecived)
     {
+        if (!myPlayer.InTurn) return;
+        
+        myPlayer.SwitchInTurn(false);
+        
         OnTurnConsumed?.Invoke();
         
         if (selectedIngredients.Count == 3)
@@ -77,7 +91,7 @@ public class PlayerSelector : MonoBehaviour
         //TODO comprobar receta con las recetas del bookrecipe
         
         //TODO player ready 
-        Debug.Log(selectedIngredients.Count);
+        Debug.Log(selectedIngredients + "//" + this.name);
     }
     
 }

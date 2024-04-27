@@ -10,9 +10,13 @@ public class Ingredient : MonoBehaviour, IInteractuable
     [SerializeField] private IngredientsSO ingredient;
 
     public static event Action<IngredientsSO> OnIngredientSelected;
-    void IInteractuable.Interact ()
+
+    public void ConsumeIngredient ()
     {
         gameObject.SetActive(false);
+    }
+    void IInteractuable.Interact ()
+    {
         OnIngredientSelected?.Invoke(ingredient);
     }
 
