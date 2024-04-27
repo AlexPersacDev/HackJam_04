@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 
 [CreateAssetMenu (menuName = "Turns Event")]
 public class TurnsEventSO : ScriptableObject
@@ -16,7 +17,6 @@ public class TurnsEventSO : ScriptableObject
             playersInGame[i].OnTurnConsumed += TurnChanged;
         }
     }
-
     public void FillPlayersInGame (PlayerSelector playerRecived)
     {
         playersInGame.Add(playerRecived);

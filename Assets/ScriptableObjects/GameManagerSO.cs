@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using System.Threading.Tasks;
 using UnityEngine.SceneManagement;
 
 
@@ -47,6 +48,14 @@ public class GameManagerSO : ScriptableObject
         PlayerSelector.OnStartGame += RecivePlayerInGame;
     }
 
+    public async void GoToGarage ()
+    {
+        SceneManager.LoadScene("Garage");
+
+        await Task.Delay(5000);
+        
+        turnEvent.StartGarage();
+    }
     private void ChangePlayerTurn()
     {
         
