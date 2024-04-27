@@ -36,7 +36,8 @@ public class CursorRaycaster : MonoBehaviour
         }
         
         interacting = hitInfo.transform.gameObject.TryGetComponent<IInteractuable>(out IInteractuable interact);
-            
+
+        interact.Interact();
         ChangeScale();
     }
 
