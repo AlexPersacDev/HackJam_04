@@ -9,9 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2008ce765cbe4e147a903be84457c04e, type: 3}
-  m_Name: CurrentMaximumVelocity
+  m_Script: {fileID: 11500000, guid: ab9aac3bb4235b2448b406c7306637f2, type: 3}
+  m_Name: GameManager
   m_EditorClassIdentifier: 
-  debugLogEnabled: 0
-  ResetOn: 1
-  value: 5
+  totalCheckPoints: 4

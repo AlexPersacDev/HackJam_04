@@ -15233,6 +15233,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a5daabc975eb1c43a00e0b46df8dd97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gM: {fileID: 11400000, guid: dea6e79a57955ab4c87cbb042c0556eb, type: 2}
   playerNumber: 1
 --- !u!114 &1959775078734089968
 MonoBehaviour:

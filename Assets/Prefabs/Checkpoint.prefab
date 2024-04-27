@@ -79,7 +79,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6f11ffaea3d2ca47936934901b9912b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gM: {fileID: 11400000, guid: dea6e79a57955ab4c87cbb042c0556eb, type: 2}
   spawnLocation: {fileID: 5620868938895381145}
+  checkPointNumber: 0
 --- !u!33 &5923005109203734175
 MeshFilter:
   m_ObjectHideFlags: 0
