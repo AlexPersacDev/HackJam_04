@@ -6,16 +6,16 @@ using UnityEngine;
 
 public class RecipeSO : ScriptableObject
 { 
-    private IngredientsSO[] requiredIngredients;
+    private List<IngredientsSO> requiredIngredients;
     private Ranks recipeRank;
 
     private List<Ranks> ingredientsRecivedRanks;
 
-    public IngredientsSO[] RequiredIngredients => requiredIngredients;
+    public List<IngredientsSO> RequiredIngredients => requiredIngredients;
 
     public void FillRecipe (IngredientsSO[] ingredientsRecived)
     {
-        for (int i = 0; i < requiredIngredients.Length; i++)
+        for (int i = 0; i < requiredIngredients.Count; i++)
         {
             requiredIngredients[i] = ingredientsRecived[i];
         }
@@ -24,14 +24,14 @@ public class RecipeSO : ScriptableObject
 
     private void CalculateRankRecipe ()
     {
-        if (requiredIngredients.Length == 0) return;
-        for (int i = 0; i < requiredIngredients.Length; i++)
+        if (requiredIngredients.Count == 0) return;
+        for (int i = 0; i < requiredIngredients.Count; i++)
         {
             ingredientsRecivedRanks.Add(requiredIngredients[i].Rank);
         }
         
-        if (ingredientsRecivedRanks.Count((ranks) => ranks == ingredientsRecivedRanks[0]) == requiredIngredients.Length || ingredientsRecivedRanks.Count((ranks) => ranks < ingredientsRecivedRanks[0]) ==
-            requiredIngredients.Length) //todos iguales
+        if (ingredientsRecivedRanks.Count((ranks) => ranks == ingredientsRecivedRanks[0]) == requiredIngredients.Count || ingredientsRecivedRanks.Count((ranks) => ranks < ingredientsRecivedRanks[0]) ==
+            requiredIngredients.Count) //todos iguales
         {
             Debug.Log(recipeRank);
             recipeRank = ingredientsRecivedRanks[0];
@@ -40,7 +40,7 @@ public class RecipeSO : ScriptableObject
         
         
         //ninguno igual
-        for (int i = 0; i <  requiredIngredients.Length; i++)
+        for (int i = 0; i <  requiredIngredients.Count; i++)
         {
             //dos iguales
            

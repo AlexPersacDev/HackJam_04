@@ -4,9 +4,8 @@ using UnityEngine;
 
 public enum Ranks
 {
-    Bassets,
     Bad,
+    Base,
     Medium,
     Good,
-    TheFormule
 }

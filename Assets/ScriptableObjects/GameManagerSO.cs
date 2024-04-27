@@ -77,4 +77,9 @@ public class GameManagerSO : ScriptableObject
         checkpoints.Clear();
         players.Clear();
     }
+
+    internal void NewItemSelected(IngredientsSO ingredient)
+    {
+        throw new NotImplementedException();
+    }
 }
