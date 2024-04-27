@@ -397,6 +397,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Car01 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7462509598797638334, guid: f1ea05aefe7d1ff4181f6d9d8762b850, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 3783324734474822023, guid: 57d23153e8a364f379241122438b5cc2, type: 3}
+    - target: {fileID: 7462509598797638334, guid: f1ea05aefe7d1ff4181f6d9d8762b850, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 665835637906485038, guid: 57d23153e8a364f379241122438b5cc2, type: 3}
+    - target: {fileID: 7462509598797638334, guid: f1ea05aefe7d1ff4181f6d9d8762b850, type: 3}
+      propertyPath: m_Materials.Array.data[3]
+      value: 
+      objectReference: {fileID: 7942268613687288668, guid: 57d23153e8a364f379241122438b5cc2, type: 3}
     - target: {fileID: 8378358755875910413, guid: f1ea05aefe7d1ff4181f6d9d8762b850, type: 3}
       propertyPath: m_LocalPosition.x
       value: -37.3
