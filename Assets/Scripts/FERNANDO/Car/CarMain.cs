@@ -21,6 +21,7 @@ public class CarMain : MonoBehaviour
     [SerializeField]
     private string playerNumber;
 
+    private Rigidbody rb;
     public string PlayerNumber { get => playerNumber;  }
     public CarMovementSystem MovementSystem { get => movementSystem; set => movementSystem = value; }
     public GameManagerSO GM { get => gM;  }
@@ -28,7 +29,10 @@ public class CarMain : MonoBehaviour
     public PlayerSO MyId { get => myId; }
 
 
-
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -48,5 +52,10 @@ public class CarMain : MonoBehaviour
     public void NewCheckPointPassed()
     {
         gM.PlayerPassedCheckPoint(this);
+    }
+
+    public void Stop()
+    {
+        movementSystem.enabled = false;
     }
 }

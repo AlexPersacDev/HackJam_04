@@ -6,8 +6,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-namespace VehicleBehaviour.Trails
-{
+
 	// Created by Edward Kay-Coles a.k.a Hoeloe
 	public class Trail {
 
@@ -191,4 +190,3 @@ namespace VehicleBehaviour.Trails
 			}
 		}
 	}
-}

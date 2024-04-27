@@ -6,8 +6,6 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-namespace VehicleBehaviour.Trails
-{
 	// Created by Edward Kay-Coles a.k.a Hoeloe
 	public class TrailEmitter : MonoBehaviour {
 
@@ -92,4 +90,3 @@ namespace VehicleBehaviour.Trails
 			trails.Last.Value.Finish();
 		}
 	}
-}

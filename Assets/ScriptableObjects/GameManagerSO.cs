@@ -1,14 +1,15 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.SceneManagement;
 
 
 [CreateAssetMenu(menuName ="GameManager")]
 public class GameManagerSO : ScriptableObject
 {
-    private List<PlayerSelector> players= new List<PlayerSelector>();
+    private List<PlayerSelector> players = new List<PlayerSelector>();
+
     private List<CarMain> carPlayers = new List<CarMain>();
     private List<Checkpoint> checkpoints = new List<Checkpoint>();
 
@@ -21,8 +22,12 @@ public class GameManagerSO : ScriptableObject
     
     //EVENTS------------
     [SerializeField] private TurnsEventSO turnEvent;
-
     //-----------
+
+    #region events
+    public event Action<CarMain> OnNewWinner;
+    #endregion
+
     public int TotalCheckPoints { get => totalCheckPoints; }
     public List<CarMain> Players {get => carPlayers; }
     public List<Checkpoint> Checkpoints { get => checkpoints;}
@@ -101,5 +106,22 @@ public class GameManagerSO : ScriptableObject
     internal void NewItemSelected(IngredientsSO ingredient)
     {
         throw new NotImplementedException();
+    }
+
+    public void Winner(CarMain winnerCar)
+    {
+        OnNewWinner?.Invoke(winnerCar);
+
+        //Deshabilito movimiento de coches.
+        foreach (var player in carPlayers)
+        {
+            player.Stop();
+        }
+        //Start
+    }
+
+    public void LoadNewScene(int sceneIndex)
+    {
+        SceneManager.LoadScene(sceneIndex);
     }
 }
