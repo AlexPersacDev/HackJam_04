@@ -773,9 +773,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1932162344}
+  - component: {fileID: 1932162345}
   - component: {fileID: 1932162343}
   - component: {fileID: 1932162342}
-  - component: {fileID: 1932162345}
   - component: {fileID: 1932162346}
   m_Layer: 0
   m_Name: Main Camera

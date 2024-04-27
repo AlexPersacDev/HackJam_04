@@ -6,17 +6,14 @@ using System.Linq;
 
 public class PlayerSelector : MonoBehaviour
 {
-<<<<<<< HEAD
     [SerializeField] private GameManagerSO gM;
     [SerializeField] private PlayerSO player;
-=======
-    [SerializeField] private PlayerSO myPlayer;
->>>>>>> 73cc25048a39cf66431eb54ae4c560a4c7db9e2d
+
     
     private List<IngredientsSO> selectedIngredients = new List<IngredientsSO>();
 
     private int badScore, goodScore;
-    public bool InTurn => myPlayer.InTurn;
+    public bool InTurn => player.InTurn;
     
     public static event Action<PlayerSelector> OnStartGame;
 
@@ -24,7 +21,7 @@ public class PlayerSelector : MonoBehaviour
 
     private void OnEnable ()
     {
-        myPlayer.GetPlayerSelector(this);
+        player.GetPlayerSelector(this);
         Ingredient.OnIngredientSelected += ReciveIngredient;
     }
 
@@ -36,15 +33,15 @@ public class PlayerSelector : MonoBehaviour
 
     public void SwitchInTurn (bool ImInTurn)
     {
-        myPlayer.SwitchInTurn(ImInTurn);
+        player.SwitchInTurn(ImInTurn);
     }
     private void ReciveIngredient (IngredientsSO ingredientRecived)
     {
-        if (!myPlayer.InTurn) return;
+        //if (!player.InTurn) return;
+
+        //player.SwitchInTurn(false);
         
-        myPlayer.SwitchInTurn(false);
-        
-        OnTurnConsumed?.Invoke();
+        //OnTurnConsumed?.Invoke();
         
         if (selectedIngredients.Count == 3)
         {

@@ -17,11 +17,12 @@ public class Ingredient : MonoBehaviour, IInteractuable
     }
     void IInteractuable.Interact ()
     {
+        ConsumeIngredient();
         OnIngredientSelected?.Invoke(ingredient);
     }
 
-    private void OnMouseDown ()
-    {
-        ((IInteractuable)this).Interact();
-    }
+    //private void OnMouseDown ()
+    //{
+    //    ((IInteractuable)this).Interact();
+    //}
 }
