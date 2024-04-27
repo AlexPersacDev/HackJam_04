@@ -28,8 +28,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1714764156906847810}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.27308074, y: 0.3693587, z: -0.11450901, w: 0.8808455}
-  m_LocalPosition: {x: -19.781723, y: -49.600006, z: -35.1}
+  m_LocalRotation: {x: 0.2511659, y: 0.36934885, z: -0.10439853, w: 0.8885933}
+  m_LocalPosition: {x: -170.40001, y: -31.599998, z: -62.549988}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -70,7 +70,7 @@ Camera:
   far clip plane: 1000
   field of view: 60.000004
   orthographic: 1
-  orthographic size: 15
+  orthographic size: 25
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -198,7 +198,7 @@ Transform:
   m_GameObject: {fileID: 1787937222162529129}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 61.31828, y: -127.600006, z: 44.6}
+  m_LocalPosition: {x: -27.799995, y: -155.2, z: 79.35}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -251,14 +251,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2296140823129560559}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.27308074, y: 0.3693587, z: -0.11450901, w: 0.8808455}
-  m_LocalPosition: {x: -19.781723, y: -49.600006, z: -35.1}
+  m_LocalRotation: {x: 0.2511659, y: 0.36934885, z: -0.10439853, w: 0.8885933}
+  m_LocalPosition: {x: -170.40001, y: -31.599998, z: -62.549988}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2574413166912396859}
   m_Father: {fileID: 2538825099494404162}
-  m_LocalEulerAnglesHint: {x: 30, y: 45, z: 0}
+  m_LocalEulerAnglesHint: {x: 30, y: 45.499, z: 0}
 --- !u!114 &1799474882274344002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -391,7 +391,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 4
-  m_FollowOffset: {x: -81.1, y: 78, z: -79.7}
+  m_FollowOffset: {x: -142.6, y: 123.6, z: -141.9}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -437,5 +437,5 @@ MonoBehaviour:
   m_MaximumDistance: 5000
   m_MinimumFOV: 3
   m_MaximumFOV: 60
-  m_MinimumOrthoSize: 15
+  m_MinimumOrthoSize: 25
   m_MaximumOrthoSize: 50

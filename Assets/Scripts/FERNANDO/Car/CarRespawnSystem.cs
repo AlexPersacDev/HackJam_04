@@ -5,7 +5,9 @@ using UnityEngine;
 public class CarRespawnSystem : CarSystem
 {
     private Vector3 lastSpawnPosition; //El primero es la propia meta.
+    private Quaternion lastSpawnRotation; 
 
+    private int boundsDetected;
 
     [SerializeField]
     private float checkRateTime;
@@ -31,10 +33,15 @@ public class CarRespawnSystem : CarSystem
         if(other.TryGetComponent(out Checkpoint checkPoint))
         {
             lastSpawnPosition = checkPoint.SpawnLocation.position;
+            lastSpawnRotation = checkPoint.SpawnLocation.rotation;
         }
         else if(other.CompareTag("Ground"))
         {
             StartCoroutine(Check());
+        }
+        else if(other.CompareTag("Scenery"))
+        {
+            boundsDetected++;
         }
     }
 
@@ -61,7 +68,7 @@ public class CarRespawnSystem : CarSystem
     {
         rb.velocity = Vector3.zero;
         rb.isKinematic = true;
-        rb.rotation = Quaternion.identity;
+        rb.rotation = lastSpawnRotation;
         rb.position = lastSpawnPosition;
         Invoke(nameof(BackToDynamic), recoverTime);
         StopAllCoroutines();
@@ -76,6 +83,8 @@ public class CarRespawnSystem : CarSystem
     {
         if(collision.CompareTag("Scenery"))
         {
+            boundsDetected--;
+            if (boundsDetected > 0) return;
             ResetCar();
         }
     }

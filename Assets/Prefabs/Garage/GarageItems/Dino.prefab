@@ -1,0 +1,144 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2423431506711829476
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4666839043246209126}
+  - component: {fileID: 8952240628021729925}
+  - component: {fileID: 8904831578365771750}
+  m_Layer: 0
+  m_Name: Dino
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4666839043246209126
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2423431506711829476}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -52.58326, y: -6.133, z: -25.403154}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5740944288325016261}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8952240628021729925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2423431506711829476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0d96fef2249c194bbff55b1dcf24a38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ingredient: {fileID: 11400000, guid: 19bea3b14cf26e04e9ab7a8b334f82f3, type: 2}
+--- !u!65 &8904831578365771750
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2423431506711829476}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.23424149, y: 0.46448803, z: 0.25540543}
+  m_Center: {x: 0.005174637, y: 0.084077835, z: -0.02863884}
+--- !u!1001 &5197531191231053102
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4666839043246209126}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: d5c217d3d69f0f046ab2acafcd2de885, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d5c217d3d69f0f046ab2acafcd2de885, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d5c217d3d69f0f046ab2acafcd2de885, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d5c217d3d69f0f046ab2acafcd2de885, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d5c217d3d69f0f046ab2acafcd2de885, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.0213
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d5c217d3d69f0f046ab2acafcd2de885, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.0091
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d5c217d3d69f0f046ab2acafcd2de885, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.00000037252897
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d5c217d3d69f0f046ab2acafcd2de885, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.00000033871757
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d5c217d3d69f0f046ab2acafcd2de885, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d5c217d3d69f0f046ab2acafcd2de885, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d5c217d3d69f0f046ab2acafcd2de885, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d5c217d3d69f0f046ab2acafcd2de885, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d5c217d3d69f0f046ab2acafcd2de885, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -180
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d5c217d3d69f0f046ab2acafcd2de885, type: 3}
+      propertyPath: m_Name
+      value: Dinosaur
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d5c217d3d69f0f046ab2acafcd2de885, type: 3}
+--- !u!4 &5740944288325016261 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d5c217d3d69f0f046ab2acafcd2de885, type: 3}
+  m_PrefabInstance: {fileID: 5197531191231053102}
+  m_PrefabAsset: {fileID: 0}
