@@ -9,8 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08201cc65de07d8459bf39db7b6910d4, type: 3}
-  m_Name: Cigarretes
+  m_Script: {fileID: 11500000, guid: 0242c1653cf5cca4d9d144bc7469c4c2, type: 3}
+  m_Name: Recipe Book
   m_EditorClassIdentifier: 
-  name: 
-  rank: 3
+  totalRequiredIngredients: 3

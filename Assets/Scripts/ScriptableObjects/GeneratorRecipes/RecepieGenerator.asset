@@ -22,3 +22,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ad6173eca9258d843951b3a8d9a72150, type: 2}
   - {fileID: 11400000, guid: 553bbf1d37fc82b46bb0db0da15756e7, type: 2}
   - {fileID: 11400000, guid: c9ed6a35d66450a4da6e10d37128ad46, type: 2}
+  recipeBook: {fileID: 11400000, guid: 4b639a1d1230f6b42aa63d4372070693, type: 2}

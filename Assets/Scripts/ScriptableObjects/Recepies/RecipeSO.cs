@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
 
 
@@ -18,7 +19,7 @@ public class RecipeSO : ScriptableObject
         {
             requiredIngredients[i] = ingredientsRecived[i];
         }
-        CalculateRankRecipe();
+        //CalculateRankRecipe();
     }
 
     private void CalculateRankRecipe ()
@@ -29,16 +30,24 @@ public class RecipeSO : ScriptableObject
             ingredientsRecivedRanks.Add(requiredIngredients[i].Rank);
         }
         
-        if (ingredientsRecivedRanks.Count((ranks) => ranks == ingredientsRecivedRanks[0]) == requiredIngredients.Length)
+        if (ingredientsRecivedRanks.Count((ranks) => ranks == ingredientsRecivedRanks[0]) == requiredIngredients.Length || ingredientsRecivedRanks.Count((ranks) => ranks < ingredientsRecivedRanks[0]) ==
+            requiredIngredients.Length) //todos iguales
         {
+            Debug.Log(recipeRank);
             recipeRank = ingredientsRecivedRanks[0];
             return;
         }
         
+        
+        //ninguno igual
         for (int i = 0; i <  requiredIngredients.Length; i++)
         {
-            ingredientsRecivedRanks.Count((ranks) => ranks == ingredientsRecivedRanks[0]);
+            //dos iguales
+           
+            
+            //ingredientsRecivedRanks.Count((ranks) => ranks == ingredientsRecivedRanks[0]);
         }
+
         
     }
 }

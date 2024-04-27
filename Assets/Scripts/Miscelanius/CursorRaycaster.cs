@@ -9,6 +9,7 @@ public class CursorRaycaster : MonoBehaviour
     [SerializeField] private Texture2D startCursor;
     private bool interacting;
     private Vector2 mousePoint;
+    
 
     private void Start ()
     {
@@ -36,6 +37,7 @@ public class CursorRaycaster : MonoBehaviour
         
         interacting = hitInfo.transform.gameObject.TryGetComponent<IInteractuable>(out IInteractuable interact);
         
+        if (interacting && Input.GetMouseButton(0)) interact.Interact();
         ChangeScale();
     }
 
