@@ -35,7 +35,6 @@ public class PlayerSelector : MonoBehaviour
     }
     private void ReciveIngredient (IngredientsSO ingredientRecived)
     {
-        print("miau");
         if (!myPlayer.InTurn) return;
         
         myPlayer.SwitchInTurn(false);
