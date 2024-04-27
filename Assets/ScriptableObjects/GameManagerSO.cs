@@ -19,8 +19,6 @@ public class GameManagerSO : ScriptableObject
     [SerializeField]
     private int totalLaps;
     
-    [SerializeField] private EventManagerSO eventManager;
-    
     //EVENTS------------
     [SerializeField] private TurnsEventSO turnEvent;
 
