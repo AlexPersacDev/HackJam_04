@@ -8,6 +8,7 @@ TagManager:
   - Checkpoint
   - Scenery
   - Goal
+  - ObtainableItem
   layers:
   - Default
   - TransparentFX

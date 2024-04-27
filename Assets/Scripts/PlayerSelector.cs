@@ -4,15 +4,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
-public class Player : MonoBehaviour
+public class PlayerSelector : MonoBehaviour
 {
     //[SerializeField] private PlayerSO player;
     
-    private List<IngredientsSO> currentIngredients = new List<IngredientsSO>();
+    private List<IngredientsSO> selectedIngredients = new List<IngredientsSO>();
 
-    private int badScore, baseScore, mediumScore, goodScore;
+    private int badScore, goodScore;
 
-    public static event Action<Player> OnStartGame;
+    public static event Action<PlayerSelector> OnStartGame;
 
     public event Action OnTurnConsumed;
 
@@ -31,17 +31,18 @@ public class Player : MonoBehaviour
     {
         OnTurnConsumed?.Invoke();
         
-        if (currentIngredients.Count == 3)
+        if (selectedIngredients.Count == 3)
         {
             return;
         }
 
-        currentIngredients.Add(ingredientRecived);
+        selectedIngredients.Add(ingredientRecived);
 
-        if(currentIngredients.Count == 3)
+        if(selectedIngredients.Count == 3)
         { 
-            badScore = currentIngredients.Count((x) => x.Rank == Ranks.Bad);
-            goodScore = currentIngredients.Count((x) => x.Rank == Ranks.Good);
+
+            badScore = selectedIngredients.Count((x) => x.Rank == Ranks.Bad);
+            goodScore = selectedIngredients.Count((x) => x.Rank == Ranks.Good);
 
             if(goodScore == 0)//o MALA O BASE.
             {
@@ -70,8 +71,8 @@ public class Player : MonoBehaviour
         
         //TODO comprobar receta con las recetas del bookrecipe
         
-        //TODO player ready
-        Debug.Log(currentIngredients.Count);
+        //TODO player ready 
+        Debug.Log(selectedIngredients.Count);
     }
     
 }

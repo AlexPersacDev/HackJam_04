@@ -8,6 +8,9 @@ public class CarMain : MonoBehaviour
     [SerializeField]
     private GameManagerSO gM;
 
+    [SerializeField]
+    private PlayerSO myId;
+
     #region MySystems
     private CarMovementSystem movementSystem;
     private CarCheckPointsSystem checkPointsSystem;
@@ -22,6 +25,7 @@ public class CarMain : MonoBehaviour
     public CarMovementSystem MovementSystem { get => movementSystem; set => movementSystem = value; }
     public GameManagerSO GM { get => gM;  }
     public CarCheckPointsSystem CheckPointsSystem { get => checkPointsSystem; set => checkPointsSystem = value; }
+    public PlayerSO MyId { get => myId; }
 
 
 

@@ -15192,6 +15192,7 @@ GameObject:
   - component: {fileID: 8378358755875910413}
   - component: {fileID: 2909452872151445401}
   - component: {fileID: 1959775078734089968}
+  - component: {fileID: 2454628356286765972}
   - component: {fileID: 8078879083393531694}
   - component: {fileID: 8930695747554806922}
   - component: {fileID: 6737604059029439041}
@@ -15234,6 +15235,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gM: {fileID: 11400000, guid: dea6e79a57955ab4c87cbb042c0556eb, type: 2}
+  myId: {fileID: 11400000, guid: 3979b41ae8b8b924a895857c21da0a18, type: 2}
   playerNumber: 1
 --- !u!114 &1959775078734089968
 MonoBehaviour:
@@ -15346,6 +15348,18 @@ MonoBehaviour:
   boostParticles: []
   boostClip: {fileID: 8300000, guid: 7c29c309722a2444582a425e8e6aeb77, type: 3}
   boostSource: {fileID: 7588678200376274351}
+--- !u!114 &2454628356286765972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6931005272432136729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91f34b11fc4788547b21030e40b609b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &8078879083393531694
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -8,7 +8,7 @@ using System.Linq;
 [CreateAssetMenu(menuName ="GameManager")]
 public class GameManagerSO : ScriptableObject
 {
-    private List<Player> players= new List<Player>();
+    private List<PlayerSelector> players= new List<PlayerSelector>();
     private List<CarMain> carPlayers = new List<CarMain>();
     private List<Checkpoint> checkpoints = new List<Checkpoint>();
 
@@ -39,14 +39,14 @@ public class GameManagerSO : ScriptableObject
     private void OnEnable ()
     {
         turnEvent.OnChangeTurn += ChangePlayerTurn;
-        Player.OnStartGame += RecivePlayerInGame;
+        PlayerSelector.OnStartGame += RecivePlayerInGame;
     }
 
     private void ChangePlayerTurn()
     {
         
     }
-    private void RecivePlayerInGame (Player playerrecived)
+    private void RecivePlayerInGame (PlayerSelector playerrecived)
     {
         if (!players.Contains(playerrecived)) players.Add(playerrecived); ;
         
@@ -94,7 +94,7 @@ public class GameManagerSO : ScriptableObject
     {
         checkpoints.Clear();
         carPlayers.Clear();
-        Player.OnStartGame -= RecivePlayerInGame;
+        PlayerSelector.OnStartGame -= RecivePlayerInGame;
         turnEvent.OnChangeTurn -= ChangePlayerTurn;
     }
 
