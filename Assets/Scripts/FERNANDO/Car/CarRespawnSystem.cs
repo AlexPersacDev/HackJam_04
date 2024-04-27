@@ -6,6 +6,7 @@ public class CarRespawnSystem : CarSystem
 {
     private Vector3 lastSpawnPosition; //El primero es la propia meta.
 
+    private int boundsDetected;
 
     [SerializeField]
     private float checkRateTime;
@@ -35,6 +36,10 @@ public class CarRespawnSystem : CarSystem
         else if(other.CompareTag("Ground"))
         {
             StartCoroutine(Check());
+        }
+        else if(other.CompareTag("Scenery"))
+        {
+            boundsDetected++;
         }
     }
 
@@ -76,6 +81,8 @@ public class CarRespawnSystem : CarSystem
     {
         if(collision.CompareTag("Scenery"))
         {
+            boundsDetected--;
+            if (boundsDetected > 0) return;
             ResetCar();
         }
     }

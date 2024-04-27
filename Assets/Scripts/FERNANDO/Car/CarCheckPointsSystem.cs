@@ -59,7 +59,7 @@ public class CarCheckPointsSystem : CarSystem
         checkPointsPassed++;
         lastCheckPoint = thisCheckPoint;
         main.NewCheckPointPassed();
-        if (checkPointsPassed == main.GM.TotalCheckPoints) //Si he llegado al último contando con meta...
+        if (checkPointsPassed == main.GM.TotalCheckPoints) //Si he llegado al Ãºltimo contando con meta...
         {
             NewLap();
         }
@@ -72,7 +72,7 @@ public class CarCheckPointsSystem : CarSystem
         main.NewLapPassed();
         if(lapsPassed == main.GM.TotalLaps)
         {
-            //A mi inventario general añado los de esta carrera.
+            //A mi inventario general aÃ±ado los de esta carrera.
             main.MyId.InventoryIngredients = main.MyId.RaceIngredients.Concat(main.MyId.InventoryIngredients).ToList();
             main.GM.Winner(main);
         }
