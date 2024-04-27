@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Ingredient", menuName = "Ingredient")]
+[CreateAssetMenu(fileName = "Ingredient")]
 public class IngredientsSO : ScriptableObject
 {
     [SerializeField] private string ingredientName;
