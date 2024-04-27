@@ -9,22 +9,22 @@ public class TurnsEventSO : ScriptableObject
     public event Action OnChangeTurn;
     private void OnEnable ()
     {
-        foreach (Player player in playersInGame)
+        for (int i = 0; i < playersInGame.Length; i++)
         {
-            player.OnTurnConsumed += TurnChanged;
+            playersInGame[i].OnTurnConsumed += TurnChanged;
         }
     }
 
-    private void OnDisable ()
-    {
-        foreach (Player player in playersInGame)
-        {
-            player.OnTurnConsumed -= TurnChanged;
-        }
-    }
 
     private void TurnChanged ()
     {
         OnChangeTurn?.Invoke();
+    }
+    private void OnDisable ()
+    {
+        for (int i = 0; i < playersInGame.Length; i++)
+        {
+            playersInGame[i].OnTurnConsumed -= TurnChanged;
+        }
     }
 }
