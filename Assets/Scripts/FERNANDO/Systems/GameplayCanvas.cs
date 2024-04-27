@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class CanvasManager : MonoBehaviour
+public class GameplayCanvas : MonoBehaviour
 {
     [SerializeField]
     private GameManagerSO gM;

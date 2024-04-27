@@ -6,7 +6,8 @@ using System.Linq;
 
 public class PlayerSelector : MonoBehaviour
 {
-    //[SerializeField] private PlayerSO player;
+    [SerializeField] private GameManagerSO gM;
+    [SerializeField] private PlayerSO player;
     
     private List<IngredientsSO> selectedIngredients = new List<IngredientsSO>();
 
@@ -35,6 +36,8 @@ public class PlayerSelector : MonoBehaviour
         {
             return;
         }
+
+        player.InventoryIngredients.Remove(ingredientRecived);
 
         selectedIngredients.Add(ingredientRecived);
 
@@ -66,6 +69,8 @@ public class PlayerSelector : MonoBehaviour
                     Debug.Log("FORMULA 1!");
                 }
             }
+
+            gM.PlayerFinishedFormula();
             
         }
         

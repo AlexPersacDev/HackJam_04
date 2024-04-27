@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class CarCheckPointsSystem : CarSystem
 {
@@ -71,6 +72,8 @@ public class CarCheckPointsSystem : CarSystem
         main.NewLapPassed();
         if(lapsPassed == main.GM.TotalLaps)
         {
+            //A mi inventario general añado los de esta carrera.
+            main.MyId.InventoryIngredients = main.MyId.RaceIngredients.Concat(main.MyId.InventoryIngredients).ToList();
             main.GM.Winner(main);
         }
     }

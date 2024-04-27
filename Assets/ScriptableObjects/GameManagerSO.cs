@@ -26,6 +26,7 @@ public class GameManagerSO : ScriptableObject
 
     #region events
     public event Action<CarMain> OnNewWinner;
+    public event Action OnPlayerFinishedFormula;
     #endregion
 
     public int TotalCheckPoints { get => totalCheckPoints; }
@@ -95,18 +96,6 @@ public class GameManagerSO : ScriptableObject
 
         //players.Reverse();
     }
-    private void OnDisable()
-    {
-        checkpoints.Clear();
-        carPlayers.Clear();
-        PlayerSelector.OnStartGame -= RecivePlayerInGame;
-        turnEvent.OnChangeTurn -= ChangePlayerTurn;
-    }
-
-    internal void NewItemSelected(IngredientsSO ingredient)
-    {
-        throw new NotImplementedException();
-    }
 
     public void Winner(CarMain winnerCar)
     {
@@ -117,11 +106,24 @@ public class GameManagerSO : ScriptableObject
         {
             player.Stop();
         }
-        //Start
+
+        carPlayers.Clear(); //Para posteriores partidas.
     }
 
     public void LoadNewScene(int sceneIndex)
     {
         SceneManager.LoadScene(sceneIndex);
+    }
+
+    public void PlayerFinishedFormula()
+    {
+        OnPlayerFinishedFormula?.Invoke();
+    }
+    private void OnDisable()
+    {
+        checkpoints.Clear();
+        carPlayers.Clear();
+        PlayerSelector.OnStartGame -= RecivePlayerInGame;
+        turnEvent.OnChangeTurn -= ChangePlayerTurn;
     }
 }

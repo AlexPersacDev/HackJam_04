@@ -40,7 +40,7 @@ public class GarageManager : MonoBehaviour
 
     private void ActivateItems(GameObject[] array, string nameOfItem)
     {
-        int numberOfItems = myPlayer.CurrentIngredients.Count((x) => x.IngredientName == nameOfItem);
+        int numberOfItems = myPlayer.InventoryIngredients.Count((x) => x.IngredientName == nameOfItem);
         Debug.Log(numberOfItems + " encontrados de " + nameOfItem);
         for (int i = 0; i < numberOfItems; i++)
         {

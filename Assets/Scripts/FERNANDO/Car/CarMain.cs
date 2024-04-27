@@ -13,6 +13,7 @@ public class CarMain : MonoBehaviour
 
     #region MySystems
     private CarMovementSystem movementSystem;
+    private CarInventorySystem inventorySystem;
     private CarCheckPointsSystem checkPointsSystem;
     #endregion
 
@@ -26,8 +27,8 @@ public class CarMain : MonoBehaviour
     public CarMovementSystem MovementSystem { get => movementSystem; set => movementSystem = value; }
     public GameManagerSO GM { get => gM;  }
     public CarCheckPointsSystem CheckPointsSystem { get => checkPointsSystem; set => checkPointsSystem = value; }
+    public CarInventorySystem InventorySystem { get => inventorySystem; set => inventorySystem = value; }
     public PlayerSO MyId { get => myId; }
-
 
     private void Awake()
     {
