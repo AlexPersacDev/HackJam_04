@@ -8,32 +8,51 @@ using System.Linq;
 [CreateAssetMenu(menuName ="GameManager")]
 public class GameManagerSO : ScriptableObject
 {
-    private List<CarMain> players = new List<CarMain>();
+    private List<Player> players= new List<Player>();
+    private List<CarMain> carPlayers = new List<CarMain>();
     private List<Checkpoint> checkpoints = new List<Checkpoint>();
 
-
+    //---------
     [SerializeField]
     private int totalCheckPoints;
 
     [SerializeField]
     private int totalLaps;
+    
+    [SerializeField] private EventManagerSO eventManager;
+    
+    //EVENTS------------
+    [SerializeField] private TurnsEventSO turnEvent;
 
-
-
+    //-----------
     public int TotalCheckPoints { get => totalCheckPoints; }
-    public List<CarMain> Players {get => players; }
+    public List<CarMain> Players {get => carPlayers; }
     public List<Checkpoint> Checkpoints { get => checkpoints;}
     public int TotalLaps { get => totalLaps; }
 
     private int nextCheckPointIndex;
 
 
-    //gm ordena a los coches en función de los siguientes criterios:
+    //gm ordena a los coches en funciï¿½n de los siguientes criterios:
     //1. Numero de vueltas
     //2. Numerod de checkpoints
     //3. DISTANCAI a su siguiente checkPoint
 
+    private void OnEnable ()
+    {
+        turnEvent.OnChangeTurn += ChangePlayerTurn;
+        Player.OnStartGame += RecivePlayerInGame;
+    }
 
+    private void ChangePlayerTurn()
+    {
+        
+    }
+    private void RecivePlayerInGame (Player playerrecived)
+    {
+        if (!players.Contains(playerrecived)) players.Add(playerrecived); ;
+        
+    }
     public void PlayerPassedCheckPoint(CarMain car)
     {
         CarCheckPointsSystem checkSystem = car.CheckPointsSystem;
@@ -48,11 +67,12 @@ public class GameManagerSO : ScriptableObject
             nextCheckPointIndex = 1;
         }
         checkSystem.NextCheckPoint = checkpoints[nextCheckPointIndex];
-        Debug.Log("El coche " + car.name + " cruzó el checkpoint " + checkSystem.LastCheckPoint.CheckPointNumber);
+        Debug.Log("El coche " + car.name + " cruzï¿½ el checkpoint " + checkSystem.LastCheckPoint.CheckPointNumber);
     }
     public void PlayerPassedLap(CarMain car)
     {
-        Debug.Log("El coche " + car.name + " cruzó meta!");
+        //TODO si es el primer coche en cruzar meta se posiciona como ganador, cuando el segundo coche cruce meta se terminarÃ¡ con un delay
+        Debug.Log("El coche " + car.name + " cruzï¿½ meta!");
     }
 
     public void SortCheckPoints()
@@ -66,7 +86,7 @@ public class GameManagerSO : ScriptableObject
 
     public void UpdateRanking()
     {
-        players.OrderByDescending((x) => x.CheckPointsSystem.LapsPassed).
+        carPlayers.OrderByDescending((x) => x.CheckPointsSystem.LapsPassed).
             OrderByDescending((y) => y.CheckPointsSystem.CheckPointsPassed).
             OrderBy((z) => z.CheckPointsSystem.RemainingDistanceToNextCheck);
 
@@ -75,7 +95,9 @@ public class GameManagerSO : ScriptableObject
     private void OnDisable()
     {
         checkpoints.Clear();
-        players.Clear();
+        carPlayers.Clear();
+        Player.OnStartGame -= RecivePlayerInGame;
+        turnEvent.OnChangeTurn -= ChangePlayerTurn;
     }
 
     internal void NewItemSelected(IngredientsSO ingredient)

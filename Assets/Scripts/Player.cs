@@ -6,25 +6,20 @@ using System.Linq;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] private RecipeBookSO recipeBook;
+    //[SerializeField] private PlayerSO player;
     
     private List<IngredientsSO> currentIngredients = new List<IngredientsSO>();
 
     private int badScore, baseScore, mediumScore, goodScore;
 
+    public static event Action<Player> OnStartGame;
+
+    public event Action OnTurnConsumed;
+
     private void OnEnable ()
     {
+        OnStartGame?.Invoke(this);
         Ingredient.OnIngredientSelected += ReciveIngredient;
-    }
-
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
     }
 
     private void OnDisable ()
@@ -34,7 +29,8 @@ public class Player : MonoBehaviour
 
     private void ReciveIngredient (IngredientsSO ingredientRecived)
     {
-        //TODO cambiar de jugador
+        OnTurnConsumed?.Invoke();
+        
         if (currentIngredients.Count == 3)
         {
             return;
@@ -77,15 +73,5 @@ public class Player : MonoBehaviour
         //TODO player ready
         Debug.Log(currentIngredients.Count);
     }
-
-    private void CheckRecipe ()
-    {
-        for (int i = 0; i < recipeBook.RecipesIngredientes.Count; i++)
-        {
-            for (int j = 0; j < currentIngredients.Count; j++)
-            {
-                //if(recipeBook.RecipesIngredientes[i,] )
-            }
-        }
-    }
+    
 }

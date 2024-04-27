@@ -18,7 +18,7 @@ public class RecipeGeneratorSO : ScriptableObject
 
     private void GenerateRecepies ()
     {
-        int recipeIndex = 0;
+        //int recipeIndex = 0;
         //for (int i = 0; i < allIngredients.Count; i++)
         //{
             
@@ -36,7 +36,7 @@ public class RecipeGeneratorSO : ScriptableObject
         //        }
         //    }
         //}
-        Debug.Log(recipeIndex);
+        //Debug.Log(recipeIndex);
         
         // foreach (IngredientsSO ingredientOne in ingredients)
         // {
