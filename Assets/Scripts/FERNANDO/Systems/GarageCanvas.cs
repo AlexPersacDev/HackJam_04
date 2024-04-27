@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
+using DG.Tweening;
 
 public class GarageCanvas : MonoBehaviour
 {
@@ -9,6 +11,8 @@ public class GarageCanvas : MonoBehaviour
 
     [SerializeField]
     private GameObject readyButton;
+
+    [SerializeField] private GameObject garageGate;
 
     private void OnEnable()
     {
@@ -19,8 +23,9 @@ public class GarageCanvas : MonoBehaviour
     {
         readyButton.SetActive(true);
     }
-    public void OnReadyButtonClicked()
+    public async void OnReadyButtonClicked()
     {
+
         gM.LoadNewScene(0);
     }
 
