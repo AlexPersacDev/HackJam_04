@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CarSoundSystem : MonoBehaviour
+public class CarSoundSystem : CarSystem
 {
+
     [Header("AudioClips")]
     public AudioClip starting;
     public AudioClip rolling;
@@ -21,23 +22,27 @@ public class CarSoundSystem : MonoBehaviour
 
     private CarMovementSystem vehicle;
 
+
+    protected override void Awake()
+    {
+        base.Awake();
+    }
     void Start()
     {
         vehicle = GetComponent<CarMovementSystem>();
+        
     }
 
     void Update()
     {
         if (vehicle.Handbrake && source.clip == rolling)
         {
-            Debug.Log("sfdsfds");
             source.clip = stopping;
             source.Play();
         }
 
         if (!vehicle.Handbrake && (source.clip == stopping || source.clip == null))
         {
-            Debug.Log("sfdsfds");
             source.clip = starting;
             source.Play();
 
@@ -46,14 +51,12 @@ public class CarSoundSystem : MonoBehaviour
 
         if (!vehicle.Handbrake && !source.isPlaying)
         {
-            Debug.Log("sfdsfds");
             source.clip = rolling;
             source.Play();
         }
 
         if (source.clip == rolling)
         {
-            Debug.Log("sfdsfds");
             source.pitch = Mathf.Lerp(source.pitch, minPitch + Mathf.Abs(vehicle.Speed) / flatoutSpeed, pitchSpeed);
         }
     }
