@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -25,7 +26,12 @@ public class GarageCanvas : MonoBehaviour
     }
     public async void OnReadyButtonClicked()
     {
-
+        if (gM.playersReady > 2)
+        {
+            gM.playersReady++;
+            gM.LoadNewScene(4);
+        }
+        
         gM.LoadNewScene(0);
     }
 

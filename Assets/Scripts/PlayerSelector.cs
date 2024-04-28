@@ -13,11 +13,14 @@ public class PlayerSelector : MonoBehaviour
     private List<IngredientsSO> selectedIngredients = new List<IngredientsSO>();
 
     private int badScore, goodScore;
+    
     public bool InTurn => player.InTurn;
     
     public static event Action<PlayerSelector> OnStartGame;
 
     public event Action OnTurnConsumed;
+
+    //public event Action<Ranks> OnFormuleFinished; 
 
     private void OnEnable ()
     {
@@ -54,7 +57,7 @@ public class PlayerSelector : MonoBehaviour
 
         if(selectedIngredients.Count == 3)
         { 
-
+            Ranks rank;
             badScore = selectedIngredients.Count((x) => x.Rank == Ranks.Bad);
             goodScore = selectedIngredients.Count((x) => x.Rank == Ranks.Good);
 
@@ -63,10 +66,12 @@ public class PlayerSelector : MonoBehaviour
                 if(badScore >= 2)
                 {
                     Debug.Log("Bad result");
+                    rank = Ranks.Bad;
                 }
                 else
                 {
                     Debug.Log("BASE RESULT");
+                    rank = Ranks.Base;
                 }
             }
             else //hAY GOOD SCORE.
@@ -74,14 +79,16 @@ public class PlayerSelector : MonoBehaviour
                 if(goodScore != 3)
                 {
                     Debug.Log("MEDIUM RESULT");
+                    rank = Ranks.Medium;
                 }
                 else
                 {
                     Debug.Log("FORMULA 1!");
+                    rank = Ranks.Good;
                 }
             }
-
-            gM.PlayerFinishedFormula();
+            
+            gM.PlayerFinishedFormula(rank);
             
         }
         
