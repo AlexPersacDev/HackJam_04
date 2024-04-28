@@ -43,9 +43,9 @@ public class CarSpawner : MonoBehaviour
         if (currentRank == Ranks.Good)
         {
             Transform targetTranform = playerRank.Count == 0 ? playerOneCarPos : playerTwoCarPos;
-            Instantiate(duckCar, targetTranform.position, Quaternion.identity);
+            GameObject copy = Instantiate(duckCar, targetTranform.position, Quaternion.identity);
             playerRank.Add(currentRank);
-            SetCarVar(duckCar, playerRank.Count);
+            SetCarVar(copy, playerRank.Count);
             usedCars.Add(duckCar);
             return;
         }
@@ -58,9 +58,9 @@ public class CarSpawner : MonoBehaviour
                 if (!usedCars.Contains(midCars[index]))
                 {
                     Transform targetTranform = playerRank.Count == 0 ? playerOneCarPos : playerTwoCarPos;
-                    Instantiate(midCars[index], targetTranform.position, Quaternion.identity);
+                    GameObject copy = Instantiate(midCars[index], targetTranform.position, Quaternion.identity);
                     playerRank.Add(currentRank);
-                    SetCarVar(midCars[index], playerRank.Count);
+                    SetCarVar(copy, playerRank.Count);
                     usedCars.Add(midCars[index]);
                     aux = !aux;
                     return;
@@ -77,9 +77,9 @@ public class CarSpawner : MonoBehaviour
                 if (!usedCars.Contains(baseCars[index]))
                 {
                     Transform targetTranform = playerRank.Count == 0 ? playerOneCarPos : playerTwoCarPos;
-                    Instantiate(baseCars[index], targetTranform.position, Quaternion.identity);
+                    GameObject copy = Instantiate(baseCars[index], targetTranform.position, Quaternion.identity);
                     playerRank.Add(currentRank);
-                    SetCarVar(baseCars[index], playerRank.Count);
+                    SetCarVar(copy, playerRank.Count);
                     usedCars.Add(baseCars[index]);
                     aux = !aux;
                     return;
@@ -93,9 +93,9 @@ public class CarSpawner : MonoBehaviour
             if (!usedCars.Contains(badCars[index]))
             {
                 Transform targetTranform = playerRank.Count == 0 ? playerOneCarPos : playerTwoCarPos;
-                Instantiate(badCars[index], targetTranform.position, Quaternion.identity);
+                GameObject copy = Instantiate(badCars[index], targetTranform.position, Quaternion.identity);
                 playerRank.Add(currentRank);
-                SetCarVar(badCars[index], playerRank.Count);
+                SetCarVar(copy, playerRank.Count);
                 usedCars.Add(badCars[index]);
                 aux = !aux;
                 return;
