@@ -17,7 +17,7 @@ public class CarSpawner : MonoBehaviour
     [SerializeField] private GameObject[] midCars;
     [SerializeField] private GameObject duckCar;
 
-    private List<GameObject> usedCars;
+    private List<GameObject> usedCars = new List<GameObject>();
 
     private List<Ranks> playerRank;
 
