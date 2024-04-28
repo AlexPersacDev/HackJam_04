@@ -14838,7 +14838,7 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 400
+      value: 321.17413
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -14846,8 +14846,8 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 74.16667
-      value: 451.65094
+      time: 76.66667
+      value: 412.238
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -14867,11 +14867,11 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   diffGearing: 5
-  brakeForce: 1500
-  steerAngle: 45
-  steerSpeed: 0.9
+  brakeForce: 1000
+  steerAngle: 50
+  steerSpeed: 0.657
   jumpVel: 1.1
-  driftIntensity: 0.2
+  driftIntensity: 1.75
   centerOfMass: {fileID: 7922816759879208394}
   downforce: 8
   handbrake: 0
@@ -14881,10 +14881,10 @@ MonoBehaviour:
   - {fileID: 3915301209188607239}
   - {fileID: 7684928982367235660}
   allowBoost: 1
-  maxBoost: 12
-  boost: 12
-  boostRegen: 0.2
-  boostForce: 10000
+  maxBoost: 1
+  boost: 1
+  boostRegen: 0.4
+  boostForce: 100
   boosting: 0
   jumping: 0
   boostParticles: []

@@ -4950,19 +4950,19 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   driveWheel:
-  - {fileID: 2689408781212552211}
-  - {fileID: 842930422525744768}
-  - {fileID: 7592775093243453646}
-  - {fileID: 4690241191266971373}
+  - {fileID: 3386719007893929454, guid: a721e7bb726b35243b63d2d1134c4484, type: 3}
+  - {fileID: 7793456604254205317, guid: a721e7bb726b35243b63d2d1134c4484, type: 3}
+  - {fileID: 3910178441894782929, guid: a721e7bb726b35243b63d2d1134c4484, type: 3}
+  - {fileID: 1849394159540140571, guid: a721e7bb726b35243b63d2d1134c4484, type: 3}
   turnWheel:
-  - {fileID: 2689408781212552211}
-  - {fileID: 842930422525744768}
+  - {fileID: 3386719007893929454, guid: a721e7bb726b35243b63d2d1134c4484, type: 3}
+  - {fileID: 7793456604254205317, guid: a721e7bb726b35243b63d2d1134c4484, type: 3}
   motorTorque:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 400
+      value: 307.07007
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -4970,8 +4970,8 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 74.16667
-      value: 451.65094
+      time: 78.33336
+      value: 359.329
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -4979,8 +4979,8 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 200
-      value: 0
+      time: 199.16669
+      value: 51.627747
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -4991,29 +4991,29 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   diffGearing: 5
-  brakeForce: 1500
-  steerAngle: 45
-  steerSpeed: 0.9
+  brakeForce: 1000
+  steerAngle: 50
+  steerSpeed: 0.657
   jumpVel: 1.1
-  driftIntensity: 0.2
-  centerOfMass: {fileID: 4574468193623925323}
+  driftIntensity: 1.75
+  centerOfMass: {fileID: 4113961934887671496, guid: a721e7bb726b35243b63d2d1134c4484, type: 3}
   downforce: 8
   handbrake: 0
   allowDrift: 1
   speed: 0
   gasParticles:
-  - {fileID: 5383251058994029015}
-  - {fileID: 2202155210348657917}
+  - {fileID: 5150234276695262197, guid: a721e7bb726b35243b63d2d1134c4484, type: 3}
+  - {fileID: 8613461976218995487, guid: a721e7bb726b35243b63d2d1134c4484, type: 3}
   allowBoost: 1
-  maxBoost: 12
-  boost: 12
-  boostRegen: 0.2
-  boostForce: 10000
+  maxBoost: 1
+  boost: 1
+  boostRegen: 0.4
+  boostForce: 100
   boosting: 0
-  jumping: 0
+  jumping: 1
   boostParticles: []
   boostClip: {fileID: 8300000, guid: 7c29c309722a2444582a425e8e6aeb77, type: 3}
-  boostSource: {fileID: 4168565301863977119}
+  boostSource: {fileID: 1540629667355359795, guid: a721e7bb726b35243b63d2d1134c4484, type: 3}
 --- !u!114 &7563671692441213487
 MonoBehaviour:
   m_ObjectHideFlags: 0

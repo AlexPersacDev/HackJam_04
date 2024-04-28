@@ -5295,14 +5295,14 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.21847826
     - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
+      time: -0.20833334
+      value: -0.014150944
+      inSlope: 0.034833092
+      outSlope: 0.034833092
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
+      inWeight: 1
+      outWeight: 0.8965517
     - serializedVersion: 3
       time: 1
       value: 1
@@ -5316,19 +5316,19 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   driveWheel:
-  - {fileID: 5454959242217334584}
-  - {fileID: 54862654857454293}
-  - {fileID: 5839834057120891702}
-  - {fileID: 1143753136164444149}
+  - {fileID: 2387477058110114124, guid: f8399c5fb11dc7640af1f364615abd7e, type: 3}
+  - {fileID: 4503890484737372800, guid: f8399c5fb11dc7640af1f364615abd7e, type: 3}
+  - {fileID: 8812169880046696913, guid: f8399c5fb11dc7640af1f364615abd7e, type: 3}
+  - {fileID: 8372543499906165571, guid: f8399c5fb11dc7640af1f364615abd7e, type: 3}
   turnWheel:
-  - {fileID: 5454959242217334584}
-  - {fileID: 54862654857454293}
+  - {fileID: 2387477058110114124, guid: f8399c5fb11dc7640af1f364615abd7e, type: 3}
+  - {fileID: 4503890484737372800, guid: f8399c5fb11dc7640af1f364615abd7e, type: 3}
   motorTorque:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0
-      value: 400
+      time: 1.7730484
+      value: 444.739
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -5336,8 +5336,8 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 50
-      value: 500
+      time: 71.507095
+      value: 500.65082
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -5345,8 +5345,8 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 200
-      value: 0
+      time: 197.03235
+      value: 200.40857
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -5356,30 +5356,30 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  diffGearing: 10
-  brakeForce: 3000
-  steerAngle: 30
-  steerSpeed: 1
+  diffGearing: 5
+  brakeForce: 5500
+  steerAngle: 50
+  steerSpeed: 0.97
   jumpVel: 1.1
-  driftIntensity: 0.11
-  centerOfMass: {fileID: 4702929540374480701}
+  driftIntensity: 0.25
+  centerOfMass: {fileID: 3334768525084860477, guid: f8399c5fb11dc7640af1f364615abd7e, type: 3}
   downforce: 8
-  handbrake: 0
+  handbrake: 1
   allowDrift: 1
   speed: 0
   gasParticles:
-  - {fileID: 16921312784010939}
-  - {fileID: 5700154392420118362}
+  - {fileID: 4655090570664457865, guid: f8399c5fb11dc7640af1f364615abd7e, type: 3}
+  - {fileID: 7761965633735050356, guid: f8399c5fb11dc7640af1f364615abd7e, type: 3}
   allowBoost: 1
-  maxBoost: 40
-  boost: 40
-  boostRegen: 0.11
+  maxBoost: 17
+  boost: 27
+  boostRegen: 1
   boostForce: 10000
   boosting: 0
   jumping: 0
   boostParticles: []
   boostClip: {fileID: 8300000, guid: 7c29c309722a2444582a425e8e6aeb77, type: 3}
-  boostSource: {fileID: 2282376031079743490}
+  boostSource: {fileID: 7490348450852311413, guid: f8399c5fb11dc7640af1f364615abd7e, type: 3}
 --- !u!114 &177231309428319247
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5412,7 +5412,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3196635377413000317}
   serializedVersion: 4
-  m_Mass: 275
+  m_Mass: 350
   m_Drag: 0.02
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
