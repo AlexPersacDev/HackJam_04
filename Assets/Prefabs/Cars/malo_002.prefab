@@ -10011,8 +10011,8 @@ MonoBehaviour:
     m_RotationOrder: 4
   diffGearing: 5
   brakeForce: 500
-  steerAngle: 19.5
-  steerSpeed: 0.75
+  steerAngle: 25.4
+  steerSpeed: 0.747
   jumpVel: 1.1
   driftIntensity: 0.2
   centerOfMass: {fileID: 7843881295767539945}
@@ -10065,7 +10065,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1960000884732783166}
   serializedVersion: 4
-  m_Mass: 600
+  m_Mass: 650
   m_Drag: 0.02
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
