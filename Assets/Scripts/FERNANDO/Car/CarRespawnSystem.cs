@@ -26,6 +26,9 @@ public class CarRespawnSystem : CarSystem
     {
         base.Awake();
         rb = transform.root.GetComponent<Rigidbody>();
+
+        lastSpawnPosition = transform.position; //Por si no llegamos a ningún checkPoint y nos salimos.
+        lastSpawnRotation = transform.rotation;
     }
 
     private void OnTriggerEnter(Collider other)
