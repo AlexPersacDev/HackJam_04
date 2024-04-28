@@ -20,13 +20,14 @@ public class GameplayCanvas : MonoBehaviour
     {
         winnerText.gameObject.SetActive(true);
         winnerText.SetText("Player " + winner.PlayerNumber + " wins!");
-        Invoke(nameof(GarageReady), 2f);
+        gM.CheckIfEndScreen();
+        //Invoke(nameof(GarageReady), 2f);
     }
 
-    private void GarageReady()
-    {
-        gM.LoadNewScene(1);
-    }
+    // private void GarageReady()
+    // {
+    //     gM.LoadNewScene(1);
+    // }
     // Start is called before the first frame update
     void Start()
     {

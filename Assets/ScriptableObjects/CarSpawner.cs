@@ -42,6 +42,7 @@ public class CarSpawner : MonoBehaviour
             Transform targetTranform = playerRank.Count == 0 ? playerOneCarPos : playerTwoCarPos;
             Instantiate(duckCar, targetTranform.position, Quaternion.identity);
             playerRank.Add(currentRank);
+            SetCarVar(duckCar, playerRank.Count);
             usedCars.Add(duckCar);
             return;
         }
@@ -56,6 +57,7 @@ public class CarSpawner : MonoBehaviour
                     Transform targetTranform = playerRank.Count == 0 ? playerOneCarPos : playerTwoCarPos;
                     Instantiate(midCars[index], targetTranform.position, Quaternion.identity);
                     playerRank.Add(currentRank);
+                    SetCarVar(midCars[index], playerRank.Count);
                     usedCars.Add(midCars[index]);
                     aux = !aux;
                     return;
@@ -74,6 +76,7 @@ public class CarSpawner : MonoBehaviour
                     Transform targetTranform = playerRank.Count == 0 ? playerOneCarPos : playerTwoCarPos;
                     Instantiate(baseCars[index], targetTranform.position, Quaternion.identity);
                     playerRank.Add(currentRank);
+                    SetCarVar(baseCars[index], playerRank.Count);
                     usedCars.Add(baseCars[index]);
                     aux = !aux;
                     return;
@@ -89,6 +92,7 @@ public class CarSpawner : MonoBehaviour
                 Transform targetTranform = playerRank.Count == 0 ? playerOneCarPos : playerTwoCarPos;
                 Instantiate(badCars[index], targetTranform.position, Quaternion.identity);
                 playerRank.Add(currentRank);
+                SetCarVar(badCars[index], playerRank.Count);
                 usedCars.Add(badCars[index]);
                 aux = !aux;
                 return;
@@ -96,8 +100,11 @@ public class CarSpawner : MonoBehaviour
         }
     }
 
-    private void SetCarVar (GameObject currentcar)
+    private void SetCarVar (GameObject currentcar, int playerIndex)
     {
-        
+        CarMain currentCarSc = currentcar.GetComponent<CarMain>();
+
+        PlayerSO playerSo = playerIndex == 1 ? playerOne : playerTwo;
+        currentCarSc.SetIDCar(playerSo);
     }
 }
