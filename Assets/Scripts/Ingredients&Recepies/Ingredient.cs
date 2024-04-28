@@ -11,6 +11,8 @@ public class Ingredient : MonoBehaviour, IInteractuable
 
     public static event Action<IngredientsSO> OnIngredientSelected;
 
+    private static int counter; //Dios me perdone por hacer esta guarrada xDS
+
     private void OnEnable ()
     {
         objectOutline = gameObject.GetComponent<Outline>();
@@ -26,9 +28,21 @@ public class Ingredient : MonoBehaviour, IInteractuable
         ConsumeIngredient();
         OnIngredientSelected?.Invoke(ingredient);
     }
-
+    private void OnMouseOver()
+    {
+        objectOutline.enabled = true;
+    }
+    private void OnMouseExit()
+    {
+        objectOutline.enabled = false;
+    }
     private void OnMouseDown ()
     {
+        counter++;
+        if(counter == 3)
+        {
+            return;
+        }
         ((IInteractuable)this).Interact();
     }
 }

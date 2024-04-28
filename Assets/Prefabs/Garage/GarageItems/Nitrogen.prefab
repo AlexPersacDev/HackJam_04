@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 843070967538138705}
   - component: {fileID: 1457792157137534199}
   - component: {fileID: 5777506592494977856}
+  - component: {fileID: 2959110195147541638}
   m_Layer: 0
   m_Name: Nitrogen
   m_TagString: Untagged
@@ -47,6 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredient: {fileID: 11400000, guid: ad6173eca9258d843951b3a8d9a72150, type: 2}
+  objectOutline: {fileID: 0}
 --- !u!65 &5777506592494977856
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -68,6 +70,24 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.326321, y: 0.84720683, z: 0.3193761}
   m_Center: {x: 0.03356815, y: -0.22224462, z: -0.000000059604645}
+--- !u!114 &2959110195147541638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7083702046897724875}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 0.38550007, g: 0.9559748, b: 0.20742837, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1001 &557892514485952100
 PrefabInstance:
   m_ObjectHideFlags: 0

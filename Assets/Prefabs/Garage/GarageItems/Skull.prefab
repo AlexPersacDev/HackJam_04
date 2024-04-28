@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 9114471029395546803}
   - component: {fileID: 6140096836029406588}
   - component: {fileID: 7624602541774531569}
+  - component: {fileID: 7165177039392310721}
   m_Layer: 0
   m_Name: Skull
   m_TagString: Untagged
@@ -47,6 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredient: {fileID: 11400000, guid: 553bbf1d37fc82b46bb0db0da15756e7, type: 2}
+  objectOutline: {fileID: 0}
 --- !u!135 &7624602541774531569
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -68,6 +70,24 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.22803807
   m_Center: {x: 0, y: 0.17682672, z: 0}
+--- !u!114 &7165177039392310721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 150083031547724678}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 0.38550007, g: 0.9559748, b: 0.20742837, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1001 &2281418450211933513
 PrefabInstance:
   m_ObjectHideFlags: 0

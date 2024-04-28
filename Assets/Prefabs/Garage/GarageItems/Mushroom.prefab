@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 81411289849234477}
   - component: {fileID: 1071908155023248419}
   - component: {fileID: 551195773501070473}
+  - component: {fileID: 4000163421926824831}
   m_Layer: 0
   m_Name: Mushroom
   m_TagString: Untagged
@@ -47,6 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredient: {fileID: 11400000, guid: dbf8c4c3438ba7846952e3a2c75fb4e1, type: 2}
+  objectOutline: {fileID: 0}
 --- !u!65 &551195773501070473
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -68,6 +70,24 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.21991348, y: 0.30647516, z: 0.27936935}
   m_Center: {x: 0.0042743683, y: 0.025841951, z: -0.0028820038}
+--- !u!114 &4000163421926824831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1446419450828653742}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 0.38550007, g: 0.9559748, b: 0.20742837, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1001 &5673790818824551099
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -14,7 +14,6 @@ public class GameManagerSO : ScriptableObject
     [SerializeField] private string playerOneGarageSceneName;
     [SerializeField] private string RaceSceneName;
     
-    private List<PlayerSelector> players = new List<PlayerSelector>();
 
     private List<CarMain> carPlayers = new List<CarMain>();
     private List<Checkpoint> checkpoints = new List<Checkpoint>();
