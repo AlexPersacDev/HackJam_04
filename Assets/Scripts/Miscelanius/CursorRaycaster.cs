@@ -17,6 +17,7 @@ public class CursorRaycaster : MonoBehaviour
     private void Start ()
     {
         Cursor.SetCursor(startCursor, Vector3.zero, CursorMode.ForceSoftware);
+        
     }
 
     void Update()
