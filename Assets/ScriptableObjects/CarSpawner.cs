@@ -103,13 +103,22 @@ public class CarSpawner : MonoBehaviour
         }
     }
 
-    private void SetCarVar (GameObject currentcar, int playerIndex)
+    private void SetCarVar(GameObject currentcar, int playerIndex)
     {
         CarMain currentCarSc = currentcar.GetComponent<CarMain>();
 
         PlayerSO playerSo = playerIndex == 1 ? playerOne : playerTwo;
         currentCarSc.SetIDCar(playerSo);
 
-       if (playerSo = playerOne) playerOneCam.
+        if (playerSo == playerOne)
+        {
+            playerOneCam.Follow = currentCarSc.transform;
+            playerOneCam.LookAt = currentCarSc.transform;
+        }
+        else if (playerSo == playerTwo)
+        {
+            playerTwoCam.Follow = currentCarSc.transform;
+            playerTwoCam.LookAt = currentCarSc.transform;
+        }
     }
 }
