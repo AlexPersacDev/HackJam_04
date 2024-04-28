@@ -48,6 +48,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredient: {fileID: 11400000, guid: f06fe35973f0fd348915408f2ee10558, type: 2}
+  gM: {fileID: 11400000, guid: dea6e79a57955ab4c87cbb042c0556eb, type: 2}
+  pickUpSound: {fileID: 8300000, guid: 65829ce6703b1df4683a6875371f0164, type: 3}
   objectOutline: {fileID: 0}
 --- !u!65 &3349645399651004701
 BoxCollider:
