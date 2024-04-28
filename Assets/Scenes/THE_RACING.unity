@@ -123,6 +123,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &546477635 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9081060489847590972, guid: 5cab430a23a31be4e95eb779fb88a434, type: 3}
+  m_PrefabInstance: {fileID: 675912542}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &675912542
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -364,6 +375,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 841856854731002073, guid: a6b1e05cd146b884f968826c50e70155, type: 3}
+      propertyPath: playerOneCam
+      value: 
+      objectReference: {fileID: 546477635}
+    - target: {fileID: 841856854731002073, guid: a6b1e05cd146b884f968826c50e70155, type: 3}
+      propertyPath: playerTwoCam
+      value: 
+      objectReference: {fileID: 938981491}
     - target: {fileID: 3785916289846404496, guid: a6b1e05cd146b884f968826c50e70155, type: 3}
       propertyPath: m_Name
       value: CarSpawner
@@ -413,6 +432,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a6b1e05cd146b884f968826c50e70155, type: 3}
+--- !u!114 &938981491 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4116908495325669099, guid: 5cab430a23a31be4e95eb779fb88a434, type: 3}
+  m_PrefabInstance: {fileID: 675912542}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1066283187
 GameObject:
   m_ObjectHideFlags: 0
