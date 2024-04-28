@@ -6,7 +6,11 @@ using UnityEngine;
 public class Ingredient : MonoBehaviour, IInteractuable
 {
     [SerializeField] private IngredientsSO ingredient;
-    
+    [SerializeField]
+    private GameManagerSO gM;
+
+    [SerializeField]
+    private AudioClip pickUpSound;
     public Outline objectOutline;
 
     public static event Action<IngredientsSO> OnIngredientSelected;
@@ -44,6 +48,7 @@ public class Ingredient : MonoBehaviour, IInteractuable
         {
             return;
         }
+        gM.PlayAudio(pickUpSound);
         ((IInteractuable)this).Interact();
     }
 }

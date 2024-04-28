@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AudioManager : MonoBehaviour
+public class FerAudioManager : MonoBehaviour
 {
     [SerializeField]
     private GameManagerSO gM;
