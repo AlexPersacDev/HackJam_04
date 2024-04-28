@@ -10,18 +10,21 @@ using UnityEngine.SceneManagement;
 [CreateAssetMenu(menuName ="GameManager")]
 public class GameManagerSO : ScriptableObject
 {
+    
     [SerializeField] private string playerOneGarageSceneName;
     [SerializeField] private string RaceSceneName;
     
-    private List<PlayerSelector> players = new List<PlayerSelector>();
 
     private List<CarMain> carPlayers = new List<CarMain>();
     private List<Checkpoint> checkpoints = new List<Checkpoint>();
 
     private List<Ranks> playerRanks = new List<Ranks>();
+
+    private int currentRounds;
     
     public int playersReady;
 
+    
     //---------
     [SerializeField]
     private int totalCheckPoints;
@@ -117,6 +120,7 @@ public class GameManagerSO : ScriptableObject
 
     public void Winner(CarMain winnerCar)
     {
+        currentRounds++;
         OnNewWinner?.Invoke(winnerCar);
 
         //Deshabilito movimiento de coches.
@@ -135,7 +139,6 @@ public class GameManagerSO : ScriptableObject
 
     public void PlayerFinishedFormula(Ranks currentRank)
     {
-        Debug.Log(currentRank);
         playerRanks.Add(currentRank);
         OnPlayerFinishedFormula?.Invoke();
         OnInstanciatePlayerCar?.Invoke(currentRank);
@@ -149,6 +152,11 @@ public class GameManagerSO : ScriptableObject
         checkpoints.Clear();
         carPlayers.Clear();
         //PlayerSelector.OnStartGame -= RecivePlayerInGame;
+        
+    }
+
+    public void CheckIfEndScreen ()
+    {
         
     }
 

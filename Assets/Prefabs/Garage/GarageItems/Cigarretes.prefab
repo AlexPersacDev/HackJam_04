@@ -758,6 +758,7 @@ GameObject:
   - component: {fileID: 7825761575520039366}
   - component: {fileID: 4301046856320941795}
   - component: {fileID: 1748250947714766367}
+  - component: {fileID: 650648582712485403}
   m_Layer: 0
   m_Name: Cigarretes
   m_TagString: Untagged
@@ -815,6 +816,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredient: {fileID: 11400000, guid: 3a7773b2856b24c40b89f60751153123, type: 2}
+  objectOutline: {fileID: 0}
+--- !u!114 &650648582712485403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5332670262604730167}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 0.38550007, g: 0.9559748, b: 0.20742837, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &5875829433724211371
 GameObject:
   m_ObjectHideFlags: 0
