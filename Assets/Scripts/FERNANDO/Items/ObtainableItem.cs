@@ -16,9 +16,13 @@ public class ObtainableItem : MonoBehaviour
     [SerializeField]
     private float angularVelocity;
 
+    [SerializeField]
+    private AudioClip obtainableSound;
+
     private Vector3 initialPosition;
 
     public IngredientsSO MyData { get => myData; set => myData = value; }
+    public AudioClip ObtainableSound { get => obtainableSound;}
 
     private void Awake()
     {

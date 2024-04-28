@@ -15,6 +15,5 @@ MonoBehaviour:
   playerOneGarageSceneName: GarajePl1
   RaceSceneName: 
   playersReady: 0
-  totalCheckPoints: 23
-  totalLaps: 3
-  turnEvent: {fileID: 11400000, guid: 6759599ba1181b2479a2215ef9b82f05, type: 2}
+  totalCheckPoints: 3
+  totalLaps: 1

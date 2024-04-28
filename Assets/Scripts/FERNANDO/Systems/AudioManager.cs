@@ -4,24 +4,24 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    //[SerializeField]
-    //private GameManagerSO gM;
+    [SerializeField]
+    private GameManagerSO gM;
 
-    //[SerializeField]
-    //private AudioSource sfx;
+    [SerializeField]
+    private AudioSource sfx;
 
-    //private void OnEnable()
-    //{
-    //    gM.OnPlayAudio += PlayAudio;
-    //}
+    private void OnEnable()
+    {
+        gM.OnPlayAudio += PlayAudio;
+    }
 
-    //private void PlayAudio(AudioClip clip)
-    //{
-    //    sfx.PlayOneShot(clip);
-    //}
+    private void PlayAudio(AudioClip clip)
+    {
+        sfx.PlayOneShot(clip);
+    }
 
-    //private void OnDisable()
-    //{
-    //    gM.OnPlayAudio -= PlayAudio;
-    //}
+    private void OnDisable()
+    {
+        gM.OnPlayAudio -= PlayAudio;
+    }
 }

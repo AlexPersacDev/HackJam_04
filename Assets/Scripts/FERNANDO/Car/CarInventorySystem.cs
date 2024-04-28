@@ -5,7 +5,6 @@ using UnityEngine;
 public class CarInventorySystem : CarSystem
 {
 
-
     protected override void Awake()
     {
         base.Awake();
@@ -16,6 +15,7 @@ public class CarInventorySystem : CarSystem
     {
         if(other.TryGetComponent(out ObtainableItem obtainableItem))
         {
+            main.GM.PlayAudio(obtainableItem.ObtainableSound);
             main.MyId.RaceIngredients.Add(obtainableItem.MyData);
 
             Destroy(other.gameObject);
