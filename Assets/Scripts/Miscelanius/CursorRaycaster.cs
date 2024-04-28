@@ -27,7 +27,7 @@ public class CursorRaycaster : MonoBehaviour
 
     private void Raycast ()
     {
-        Ray ray = currentCamera.ScreenPointToRay(Input.mousePosition);
+        Ray ray = currentCamera.ScreenPointToRay(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0));
         
         
         bool raycasting = Physics.Raycast(ray, out RaycastHit hitInfo, maxDistance);
@@ -47,7 +47,6 @@ public class CursorRaycaster : MonoBehaviour
 
         if (currentIngredient == null && hitInfo.transform.gameObject.CompareTag("Ingredient"))
         {
-            print("b");
             hitInfo.transform.gameObject.TryGetComponent<Ingredient>(out Ingredient ingredient);
             currentIngredient = ingredient;
             currentIngredient.objectOutline.enabled = true;
