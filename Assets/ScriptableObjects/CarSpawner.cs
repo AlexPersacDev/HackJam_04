@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Cinemachine;
 using Unity.VisualScripting;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -9,6 +10,8 @@ using Random = UnityEngine.Random;
 public class CarSpawner : MonoBehaviour
 {
     [SerializeField] private PlayerSO playerOne, playerTwo;
+    [SerializeField] private CinemachineVirtualCamera playerOneCam;
+    [SerializeField] private CinemachineVirtualCamera playerTwoCam;
     [SerializeField] private GameManagerSO gM;
     [SerializeField] private Transform playerOneCarPos;
     [SerializeField] private Transform playerTwoCarPos;
@@ -19,7 +22,7 @@ public class CarSpawner : MonoBehaviour
 
     private List<GameObject> usedCars = new List<GameObject>();
 
-    private List<Ranks> playerRank;
+    private List<Ranks> playerRank = new List<Ranks>();
 
     private void OnEnable ()
     {
@@ -106,5 +109,7 @@ public class CarSpawner : MonoBehaviour
 
         PlayerSO playerSo = playerIndex == 1 ? playerOne : playerTwo;
         currentCarSc.SetIDCar(playerSo);
+
+       if (playerSo = playerOne) playerOneCam.
     }
 }

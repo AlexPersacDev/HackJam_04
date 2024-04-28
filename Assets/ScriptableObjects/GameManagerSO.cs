@@ -98,7 +98,7 @@ public class GameManagerSO : ScriptableObject
     }
     public void PlayerPassedLap(CarMain car)
     {
-        //TODO si es el primer coche en cruzar meta se posiciona como ganador, cuando el segundo coche cruce meta se terminará con un delay
+        
         Debug.Log("El coche " + car.name + " cruz� meta!");
     }
 
@@ -157,7 +157,9 @@ public class GameManagerSO : ScriptableObject
 
     public void CheckIfEndScreen ()
     {
+        if(currentRounds <= 3) LoadNewScene(2);
         
+        else LoadNewScene(3);
     }
 
 }
