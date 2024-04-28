@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/THE_RACING.unity
+    path: Assets/Scenes/FinalScenes/THE_RACING.unity
     guid: 0b3a78ae4eab36346996fdcbc07f66de
   - enabled: 1
     path: Assets/Scenes/Garage.unity
@@ -18,6 +18,6 @@ EditorBuildSettings:
     path: Assets/Scenes/FinalScenes/GarajePl1.unity
     guid: e7bdf12367e7a47428c2fe5f2f63bbef
   - enabled: 1
-    path: Assets/Scenes/FinalScenes/GarajePl2.unity
-    guid: 1f392b85fc51afe419530e8b7667aecc
+    path: Assets/Scenes/FinalScenes/GarajePl1 1.unity
+    guid: c64ca17db655ad343aa2679d217017dc
   m_configObjects: {}

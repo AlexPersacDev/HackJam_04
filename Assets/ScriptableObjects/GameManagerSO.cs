@@ -66,8 +66,6 @@ public class GameManagerSO : ScriptableObject
     public async void GoToGarage ()
     {
         SceneManager.LoadScene(playerOneGarageSceneName);
-
-        await Task.Delay(5000);
         
         //turnEvent.StartGarage();
     }
@@ -137,11 +135,12 @@ public class GameManagerSO : ScriptableObject
         SceneManager.LoadScene(sceneIndex);
     }
 
-    public void PlayerFinishedFormula(Ranks currentRank)
+    public async  void PlayerFinishedFormula(Ranks currentRank)
     {
         playerRanks.Add(currentRank);
         OnPlayerFinishedFormula?.Invoke();
-        OnInstanciatePlayerCar?.Invoke(currentRank);
+
+        await Task.Delay(50);
     }
     public void PlayAudio(AudioClip starting)
     {

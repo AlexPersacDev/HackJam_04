@@ -15,6 +15,7 @@ public class GarageCanvas : MonoBehaviour
 
     [SerializeField] private GameObject garageGate;
 
+
     private void OnEnable()
     {
         gM.OnPlayerFinishedFormula += ActivateReadyButton;
@@ -27,7 +28,11 @@ public class GarageCanvas : MonoBehaviour
     public async void OnReadyButtonClicked()
     {
         gM.playersReady++;
-        if (gM.playersReady < 2)gM.LoadNewScene(4);
+        if (gM.playersReady < 2)
+        {
+            gM.LoadNewScene(4);
+            return;
+        }
 
         gM.LoadNewScene(0);
     }
