@@ -104,10 +104,6 @@ public class GameManagerSO : ScriptableObject
 
         checkpoints.Reverse();
     }
-    
-    
-
-
 
     public void UpdateRanking()
     {
