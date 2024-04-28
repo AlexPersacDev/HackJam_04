@@ -37,6 +37,7 @@ public class CarSpawner : MonoBehaviour
         {
             Transform targetTranform = playerRank.Count == 0 ? playerOneCarPos : playerTwoCarPos;
             Instantiate(duckCar, targetTranform.position, Quaternion.identity);
+            playerRank.Add(currentRank);
             usedCars.Add(duckCar);
             return;
         }
@@ -50,6 +51,7 @@ public class CarSpawner : MonoBehaviour
                 {
                     Transform targetTranform = playerRank.Count == 0 ? playerOneCarPos : playerTwoCarPos;
                     Instantiate(midCars[index], targetTranform.position, Quaternion.identity);
+                    playerRank.Add(currentRank);
                     usedCars.Add(midCars[index]);
                     aux = !aux;
                     return;
@@ -67,6 +69,7 @@ public class CarSpawner : MonoBehaviour
                 {
                     Transform targetTranform = playerRank.Count == 0 ? playerOneCarPos : playerTwoCarPos;
                     Instantiate(baseCars[index], targetTranform.position, Quaternion.identity);
+                    playerRank.Add(currentRank);
                     usedCars.Add(baseCars[index]);
                     aux = !aux;
                     return;
@@ -81,6 +84,7 @@ public class CarSpawner : MonoBehaviour
             {
                 Transform targetTranform = playerRank.Count == 0 ? playerOneCarPos : playerTwoCarPos;
                 Instantiate(badCars[index], targetTranform.position, Quaternion.identity);
+                playerRank.Add(currentRank);
                 usedCars.Add(badCars[index]);
                 aux = !aux;
                 return;
