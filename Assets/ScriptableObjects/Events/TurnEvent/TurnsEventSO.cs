@@ -10,17 +10,17 @@ public class TurnsEventSO : ScriptableObject
     private PlayerSelector firstInTurn;
 
     public event Action OnChangeTurn;
-    private void OnEnable ()
-    {
-        for (int i = 0; i < playersInGame.Count; i++)
-        {
-            playersInGame[i].OnTurnConsumed += TurnChanged;
-        }
-    }
-    public void FillPlayersInGame (PlayerSelector playerRecived)
-    {
-        playersInGame.Add(playerRecived);
-    }
+    // private void OnEnable ()
+    // {
+    //     for (int i = 0; i < playersInGame.Count; i++)
+    //     {
+    //         playersInGame[i].OnTurnConsumed += TurnChanged;
+    //     }
+    // }
+    // public void FillPlayersInGame (PlayerSelector playerRecived)
+    // {
+    //     playersInGame.Add(playerRecived);
+    // }
     // public void StartGarage ()
     // {
     //     if (firstInTurn != null)
@@ -31,19 +31,19 @@ public class TurnsEventSO : ScriptableObject
     //     playersInGame[0].SwitchInTurn(true);
     // }
 
-    private void TurnChanged ()
-    {
-        for (int i = 0; i < playersInGame.Count; i++)
-        {
-            playersInGame[i].SwitchInTurn(!playersInGame[i].InTurn);
-        }
-        OnChangeTurn?.Invoke();
-    }
-    private void OnDisable ()
-    {
-        for (int i = 0; i < playersInGame.Count; i++)
-        {
-            playersInGame[i].OnTurnConsumed -= TurnChanged;
-        }
-    }
+    // private void TurnChanged ()
+    // {
+    //     for (int i = 0; i < playersInGame.Count; i++)
+    //     {
+    //         playersInGame[i].SwitchInTurn(!playersInGame[i].InTurn);
+    //     }
+    //     OnChangeTurn?.Invoke();
+    // }
+    // private void OnDisable ()
+    // {
+    //     for (int i = 0; i < playersInGame.Count; i++)
+    //     {
+    //         playersInGame[i].OnTurnConsumed -= TurnChanged;
+    //     }
+    // }
 }

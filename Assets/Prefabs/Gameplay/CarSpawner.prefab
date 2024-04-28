@@ -77,6 +77,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82e51c61df38f1f4ba4dc5ab6f2a37c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerOne: {fileID: 11400000, guid: 3979b41ae8b8b924a895857c21da0a18, type: 2}
+  playerTwo: {fileID: 11400000, guid: bec4ab5cfa6a03b478359d3cf329fd75, type: 2}
   gM: {fileID: 11400000, guid: dea6e79a57955ab4c87cbb042c0556eb, type: 2}
   playerOneCarPos: {fileID: 2367924964993740079}
   playerTwoCarPos: {fileID: 4702126920445486879}
