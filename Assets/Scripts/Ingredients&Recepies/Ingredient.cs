@@ -21,8 +21,8 @@ public class Ingredient : MonoBehaviour, IInteractuable
         OnIngredientSelected?.Invoke(ingredient);
     }
 
-    //private void OnMouseDown ()
-    //{
-    //    ((IInteractuable)this).Interact();
-    //}
+    // private void OnMouseDown ()
+    // {
+    //     ((IInteractuable)this).Interact();
+    // }
 }

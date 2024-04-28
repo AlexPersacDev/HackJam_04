@@ -94,4 +94,9 @@ public class CarSpawner : MonoBehaviour
             }  //si el gO que he sacado no lo tiene el otro player salgo del while
         }
     }
+
+    private void SetCarVar (GameObject currentcar)
+    {
+        
+    }
 }
