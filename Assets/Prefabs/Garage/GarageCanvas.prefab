@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1869161050526496085
 RectTransform:
   m_ObjectHideFlags: 0
@@ -175,7 +175,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gM: {fileID: 11400000, guid: dea6e79a57955ab4c87cbb042c0556eb, type: 2}
-  readyButton: {fileID: 0}
+  readyButton: {fileID: 385485342299094808}
   garageGate: {fileID: 5741869912155015075}
 --- !u!223 &3546180243886370861
 Canvas:
