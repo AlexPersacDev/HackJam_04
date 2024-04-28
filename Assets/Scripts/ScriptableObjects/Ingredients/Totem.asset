@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Totem
   m_EditorClassIdentifier: 
   ingredientName: Totem
-  rank: 0
+  rank: 1

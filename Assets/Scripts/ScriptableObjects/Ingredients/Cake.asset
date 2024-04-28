@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Cake
   m_EditorClassIdentifier: 
   ingredientName: Cake
-  rank: 0
+  rank: 1

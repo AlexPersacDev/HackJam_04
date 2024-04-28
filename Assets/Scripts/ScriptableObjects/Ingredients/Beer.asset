@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Beer
   m_EditorClassIdentifier: 
   ingredientName: Beer
-  rank: 0
+  rank: 1
