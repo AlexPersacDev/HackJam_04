@@ -22,7 +22,10 @@ public class CarSpawner : MonoBehaviour
 
     private void OnEnable ()
     {
-        
+        foreach (Ranks rank in gM.PlayerRanks)
+        {
+            AnalizePlayerRank(rank);
+        }
     }
 
     private void OnDisable ()
