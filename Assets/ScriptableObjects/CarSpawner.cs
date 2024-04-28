@@ -8,6 +8,7 @@ using Random = UnityEngine.Random;
 
 public class CarSpawner : MonoBehaviour
 {
+    [SerializeField] private PlayerSO playerOne, playerTwo;
     [SerializeField] private GameManagerSO gM;
     [SerializeField] private Transform playerOneCarPos;
     [SerializeField] private Transform playerTwoCarPos;

@@ -12,7 +12,7 @@ GameObject:
   m_Layer: 9
   m_Name: p1Pos
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 1337077628511457493}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.777885, y: -0.061027527, z: -2.0477772}
+  m_LocalPosition: {x: -3.88, y: -0.061027527, z: -2.0477772}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -81,12 +81,16 @@ MonoBehaviour:
   playerOneCarPos: {fileID: 2367924964993740079}
   playerTwoCarPos: {fileID: 4702126920445486879}
   badCars:
+  - {fileID: 1960000884732783166, guid: aaebbb3036ab0ba4cb3eb8cb55beb4c1, type: 3}
+  - {fileID: 6702987224847961447, guid: b47a72633aef0b042a420d1fdd9f76f4, type: 3}
+  baseCars:
   - {fileID: 4466704853423399594, guid: b30cfdcedd6d66e4c9172b646ef7f8a3, type: 3}
   - {fileID: 1163770549009931665, guid: 05d67204838b1ee44b72ad66f79c8170, type: 3}
   - {fileID: 8062930740306895252, guid: 948d83dc2e5a91445b3e26e4c82ca614, type: 3}
   - {fileID: 267166931463741015, guid: 35ce849226095664382b1b8125e7e4b5, type: 3}
-  baseCars: []
-  midCars: []
+  midCars:
+  - {fileID: 1105727968011481603, guid: 7ffef89abf089c343bf3051e9d5eb687, type: 3}
+  - {fileID: 9199167718684949778, guid: 3aab22e4c5a4e1e49b8f2d4968a1363f, type: 3}
   duckCar: {fileID: 3196635377413000317, guid: 6ae25b53d0a428b42a8be648b8f967c5, type: 3}
 --- !u!1 &6475575301151355963
 GameObject:
@@ -100,7 +104,7 @@ GameObject:
   m_Layer: 9
   m_Name: p2Pos
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -113,7 +117,7 @@ Transform:
   m_GameObject: {fileID: 6475575301151355963}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.2221146, y: -0.061027527, z: -2.0477772}
+  m_LocalPosition: {x: 3.69, y: -0.061027527, z: -2.0477772}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
