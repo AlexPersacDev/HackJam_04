@@ -25,7 +25,7 @@ public class ItemsSpawner : MonoBehaviour
 
         foreach (Transform tr in pointsChosen)
         {
-            Debug.Log("paso!");
+            
             float randomValue = Random.value;
 
             if(randomValue <= 0.35f) //Malo //35%
