@@ -5,11 +5,17 @@ using UnityEngine;
 
 public class Ingredient : MonoBehaviour, IInteractuable
 {
-
-
     [SerializeField] private IngredientsSO ingredient;
+    
+    public Outline objectOutline;
 
     public static event Action<IngredientsSO> OnIngredientSelected;
+
+    private void OnEnable ()
+    {
+        objectOutline = gameObject.GetComponent<Outline>();
+        objectOutline.enabled = false;
+    }
 
     public void ConsumeIngredient ()
     {
@@ -21,8 +27,8 @@ public class Ingredient : MonoBehaviour, IInteractuable
         OnIngredientSelected?.Invoke(ingredient);
     }
 
-    //private void OnMouseDown ()
-    //{
-    //    ((IInteractuable)this).Interact();
-    //}
+    // private void OnMouseDown ()
+    // {
+    //     ((IInteractuable)this).Interact();
+    // }
 }

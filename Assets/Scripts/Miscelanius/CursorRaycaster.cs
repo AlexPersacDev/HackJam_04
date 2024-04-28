@@ -4,11 +4,14 @@ using DG.Tweening;
 
 public class CursorRaycaster : MonoBehaviour
 {
+    [SerializeField] private Camera currentCamera;
     [SerializeField] private float maxDistance;
     [SerializeField] private Texture2D maxCursor;
     [SerializeField] private Texture2D startCursor;
     private bool interacting;
     private Vector2 mousePoint;
+
+    private Ingredient currentIngredient;
     
 
     private void Start ()
@@ -23,16 +26,24 @@ public class CursorRaycaster : MonoBehaviour
 
     private void Raycast ()
     {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Ray ray = currentCamera.ScreenPointToRay(Input.mousePosition);
         
-        //Ray ray = new Ray(mousePoint, transform.forward);
+        
         bool raycasting = Physics.Raycast(ray, out RaycastHit hitInfo, maxDistance);
 
         if (!raycasting)
         {
             interacting = false;
-            ChangeScale();
+            //ChangeScale();
+            if (currentIngredient != null) currentIngredient.objectOutline.enabled = false;
             return;
+        }
+
+        if (currentIngredient == null && hitInfo.transform.gameObject.CompareTag("Ingredient"))
+        {
+            hitInfo.transform.gameObject.TryGetComponent<Ingredient>(out Ingredient ingredient);
+            currentIngredient = ingredient;
+            currentIngredient.objectOutline.enabled = true;
         }
         
         interacting = hitInfo.transform.gameObject.TryGetComponent<IInteractuable>(out IInteractuable interact);
@@ -44,7 +55,7 @@ public class CursorRaycaster : MonoBehaviour
                 interact.Interact();
             }
         }
-        ChangeScale();
+        //ChangeScale();
     }
 
     private void ChangeScale ()
@@ -57,7 +68,7 @@ public class CursorRaycaster : MonoBehaviour
     private void OnDrawGizmos ()
     {
         Gizmos.color = Color.red;
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Ray ray =currentCamera.ScreenPointToRay(Input.mousePosition);
         Gizmos.DrawRay(ray);
     }
 }

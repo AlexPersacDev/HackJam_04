@@ -22,7 +22,10 @@ public class CarSpawner : MonoBehaviour
 
     private void OnEnable ()
     {
-        
+        foreach (Ranks rank in gM.PlayerRanks)
+        {
+            AnalizePlayerRank(rank);
+        }
     }
 
     private void OnDisable ()
@@ -90,5 +93,10 @@ public class CarSpawner : MonoBehaviour
                 return;
             }  //si el gO que he sacado no lo tiene el otro player salgo del while
         }
+    }
+
+    private void SetCarVar (GameObject currentcar)
+    {
+        
     }
 }
