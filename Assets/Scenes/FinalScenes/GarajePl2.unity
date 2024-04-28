@@ -2780,9 +2780,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 385485342299094808, guid: f72db8ed3e364864abceca6ac018cfd0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 631198412202752422, guid: f72db8ed3e364864abceca6ac018cfd0, type: 3}
       propertyPath: m_Name
       value: GarageCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 3115418080179673448, guid: f72db8ed3e364864abceca6ac018cfd0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8102850421914303589, guid: f72db8ed3e364864abceca6ac018cfd0, type: 3}
       propertyPath: m_Pivot.x

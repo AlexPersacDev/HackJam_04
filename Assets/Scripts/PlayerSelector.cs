@@ -89,7 +89,6 @@ public class PlayerSelector : MonoBehaviour
             }
             
             gM.PlayerFinishedFormula(rank);
-            
         }
         
         //TODO comprobar receta con las recetas del bookrecipe

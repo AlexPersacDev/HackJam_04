@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using System.Threading.Tasks;
+using Unity.VisualScripting.FullSerializer;
 using UnityEngine.SceneManagement;
 
 
@@ -134,6 +135,7 @@ public class GameManagerSO : ScriptableObject
 
     public void PlayerFinishedFormula(Ranks currentRank)
     {
+        Debug.Log(currentRank);
         playerRanks.Add(currentRank);
         OnPlayerFinishedFormula?.Invoke();
         OnInstanciatePlayerCar?.Invoke(currentRank);

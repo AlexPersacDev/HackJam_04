@@ -50,6 +50,7 @@ MonoBehaviour:
   rotationVector: {x: 75, y: 45, z: 30}
   movementAmplitude: 1
   angularVelocity: 2
+  obtainableSound: {fileID: 8300000, guid: 5d50c43f00c69434cabc0829246deeb3, type: 3}
 --- !u!135 &1688619675674272279
 SphereCollider:
   m_ObjectHideFlags: 0
