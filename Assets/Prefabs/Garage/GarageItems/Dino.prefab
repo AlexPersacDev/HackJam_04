@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4666839043246209126}
   - component: {fileID: 8952240628021729925}
   - component: {fileID: 8904831578365771750}
+  - component: {fileID: -7489577275298078521}
   m_Layer: 0
   m_Name: Dino
   m_TagString: Untagged
@@ -47,6 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredient: {fileID: 11400000, guid: 19bea3b14cf26e04e9ab7a8b334f82f3, type: 2}
+  objectOutline: {fileID: 0}
 --- !u!65 &8904831578365771750
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -68,6 +70,24 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.23424149, y: 0.46448803, z: 0.25540543}
   m_Center: {x: 0.005174637, y: 0.084077835, z: -0.02863884}
+--- !u!114 &-7489577275298078521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2423431506711829476}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 0.38550007, g: 0.9559748, b: 0.20742837, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1001 &5197531191231053102
 PrefabInstance:
   m_ObjectHideFlags: 0
