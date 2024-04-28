@@ -34,10 +34,10 @@ public class PlayerSelector : MonoBehaviour
     }
 
 
-    public void SwitchInTurn (bool ImInTurn)
-    {
-        player.SwitchInTurn(ImInTurn);
-    }
+    // public void SwitchInTurn (bool ImInTurn)
+    // {
+    //     player.SwitchInTurn(ImInTurn);
+    // }
     private void ReciveIngredient (IngredientsSO ingredientRecived)
     {
         //if (!player.InTurn) return;
