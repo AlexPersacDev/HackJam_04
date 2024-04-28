@@ -404,22 +404,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PSX_Camera
       objectReference: {fileID: 0}
-    - target: {fileID: 5032726694124780428, guid: 845bcebe113685b4ea64706518b76eba, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5630648096935377539, guid: 845bcebe113685b4ea64706518b76eba, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5630648096935377539, guid: 845bcebe113685b4ea64706518b76eba, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5630648096935377539, guid: 845bcebe113685b4ea64706518b76eba, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5630648096935377539, guid: 845bcebe113685b4ea64706518b76eba, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.7
@@ -459,18 +443,6 @@ PrefabInstance:
     - target: {fileID: 5630648096935377539, guid: 845bcebe113685b4ea64706518b76eba, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -1.674
-      objectReference: {fileID: 0}
-    - target: {fileID: 7102530859442562922, guid: 845bcebe113685b4ea64706518b76eba, type: 3}
-      propertyPath: field of view
-      value: 73
-      objectReference: {fileID: 0}
-    - target: {fileID: 7102530859442562922, guid: 845bcebe113685b4ea64706518b76eba, type: 3}
-      propertyPath: m_OcclusionCulling
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8316212114859806315, guid: 845bcebe113685b4ea64706518b76eba, type: 3}
-      propertyPath: m_RenderPostProcessing
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
