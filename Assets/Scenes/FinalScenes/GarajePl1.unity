@@ -2564,9 +2564,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 695492656224285686, guid: 861b11faadb58fd429c68908f1a95c2b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3809062729984644044, guid: 861b11faadb58fd429c68908f1a95c2b, type: 3}
       propertyPath: m_Name
       value: GarageManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 6996397761161133485, guid: 861b11faadb58fd429c68908f1a95c2b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.79
+      objectReference: {fileID: 0}
+    - target: {fileID: 6996397761161133485, guid: 861b11faadb58fd429c68908f1a95c2b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6996397761161133485, guid: 861b11faadb58fd429c68908f1a95c2b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.59
       objectReference: {fileID: 0}
     - target: {fileID: 8983471514828897149, guid: 861b11faadb58fd429c68908f1a95c2b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2931,7 +2947,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 631198412202752422, guid: f72db8ed3e364864abceca6ac018cfd0, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3115418080179673448, guid: f72db8ed3e364864abceca6ac018cfd0, type: 3}
       propertyPath: m_IsActive
@@ -2943,6 +2959,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6493463623138837936, guid: f72db8ed3e364864abceca6ac018cfd0, type: 3}
       propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7939458320586297655, guid: f72db8ed3e364864abceca6ac018cfd0, type: 3}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7939458320586297655, guid: f72db8ed3e364864abceca6ac018cfd0, type: 3}
