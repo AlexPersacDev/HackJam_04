@@ -1086,6 +1086,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82e51c61df38f1f4ba4dc5ab6f2a37c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerOne: {fileID: 0}
+  playerTwo: {fileID: 0}
   gM: {fileID: 11400000, guid: dea6e79a57955ab4c87cbb042c0556eb, type: 2}
   playerOneCarPos: {fileID: 562814900}
   playerTwoCarPos: {fileID: 938486305}
