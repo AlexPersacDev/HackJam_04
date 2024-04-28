@@ -17,6 +17,7 @@ public class CursorRaycaster : MonoBehaviour
     private void Start ()
     {
         Cursor.SetCursor(startCursor, Vector3.zero, CursorMode.ForceSoftware);
+        
     }
 
     void Update()
@@ -26,7 +27,7 @@ public class CursorRaycaster : MonoBehaviour
 
     private void Raycast ()
     {
-        Ray ray = currentCamera.ScreenPointToRay(Input.mousePosition);
+        Ray ray = currentCamera.ScreenPointToRay(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0));
         
         
         bool raycasting = Physics.Raycast(ray, out RaycastHit hitInfo, maxDistance);
@@ -35,8 +36,13 @@ public class CursorRaycaster : MonoBehaviour
         {
             interacting = false;
             //ChangeScale();
-            if (currentIngredient != null) currentIngredient.objectOutline.enabled = false;
             return;
+        }
+
+        if (currentIngredient != null)
+        {
+            currentIngredient.objectOutline.enabled = false;
+            currentIngredient = null;
         }
 
         if (currentIngredient == null && hitInfo.transform.gameObject.CompareTag("Ingredient"))

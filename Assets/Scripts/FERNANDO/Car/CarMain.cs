@@ -45,6 +45,12 @@ public class CarMain : MonoBehaviour
     {
         
     }
+
+    public void SetIDCar (PlayerSO idRecived)
+    {
+        myId = idRecived;
+        playerNumber = myId.PlayerNumber.ToString();
+    }
     public void NewLapPassed()
     {
         gM.PlayerPassedLap(this);

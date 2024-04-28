@@ -35,6 +35,7 @@ public class GameManagerSO : ScriptableObject
     #region events
     public event Action<CarMain> OnNewWinner;
     public event Action OnPlayerFinishedFormula;
+    public event Action<AudioClip> OnPlayAudio;
     public event Action<Ranks> OnInstanciatePlayerCar;
     #endregion
 
@@ -138,6 +139,10 @@ public class GameManagerSO : ScriptableObject
         OnPlayerFinishedFormula?.Invoke();
         OnInstanciatePlayerCar?.Invoke(currentRank);
     }
+    public void PlayAudio(AudioClip starting)
+    {
+        OnPlayAudio?.Invoke(starting);
+    }
     private void OnDisable()
     {
         checkpoints.Clear();
@@ -145,4 +150,5 @@ public class GameManagerSO : ScriptableObject
         //PlayerSelector.OnStartGame -= RecivePlayerInGame;
         turnEvent.OnChangeTurn -= ChangePlayerTurn;
     }
+
 }
