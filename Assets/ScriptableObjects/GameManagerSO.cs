@@ -135,7 +135,6 @@ public class GameManagerSO : ScriptableObject
 
     public void PlayerFinishedFormula(Ranks currentRank)
     {
-        Debug.Log(currentRank);
         playerRanks.Add(currentRank);
         OnPlayerFinishedFormula?.Invoke();
         OnInstanciatePlayerCar?.Invoke(currentRank);

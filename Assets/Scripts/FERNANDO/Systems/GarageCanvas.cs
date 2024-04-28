@@ -26,12 +26,9 @@ public class GarageCanvas : MonoBehaviour
     }
     public async void OnReadyButtonClicked()
     {
-        if (gM.playersReady > 2)
-        {
-            gM.playersReady++;
-            gM.LoadNewScene(4);
-        }
-        
+        gM.playersReady++;
+        if (gM.playersReady < 2)gM.LoadNewScene(4);
+
         gM.LoadNewScene(0);
     }
 
