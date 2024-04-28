@@ -39,7 +39,8 @@ public class Ingredient : MonoBehaviour, IInteractuable
     private void OnMouseDown ()
     {
         counter++;
-        if(counter == 3)
+        Debug.Log(counter);
+        if(counter > 3)
         {
             return;
         }
