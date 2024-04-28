@@ -16,26 +16,53 @@ public class GarageManager : MonoBehaviour
     private GameObject[] skulls;
 
     [SerializeField]
+    private GameObject[] dinos;
+
+    [SerializeField]
     private GameObject[] mates;
+
+    [SerializeField]
+    private GameObject[] mushrooms;
 
     [SerializeField]
     private GameObject[] uraniums;
 
     [SerializeField]
-    private GameObject[] dinos;
+    private GameObject[] beers;
 
     [SerializeField]
-    private GameObject[] mushrooms;
+    private GameObject[] totems;
+
+    [SerializeField]
+    private GameObject[] cakes;
+
+    [SerializeField]
+    private GameObject[] drinks;
+
+    [SerializeField]
+    private GameObject[] nitrogen;
+
+    [SerializeField]
+    private GameObject[] gas;
+
+
 
     private void Awake()
     {
         ActivateItems(cigarretes, "Cigarretes");
         ActivateItems(skulls, "Skull");
-        ActivateItems(mates, "Mate");
-        ActivateItems(uraniums, "Uranium");
         ActivateItems(dinos, "Dinosaur");
+        ActivateItems(mates, "Mate");
         ActivateItems(mushrooms, "Mushrooms");
-        
+        ActivateItems(uraniums, "Uranium");
+
+        ActivateItems(beers, "Beer");
+        ActivateItems(totems, "Totem");
+        ActivateItems(cakes, "Cake");
+        ActivateItems(drinks, "Drink");
+        ActivateItems(nitrogen, "Nitrogen");
+        ActivateItems(gas, "Gas");
+
     }
 
     private void ActivateItems(GameObject[] array, string nameOfItem)

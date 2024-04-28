@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 08201cc65de07d8459bf39db7b6910d4, type: 3}
-  m_Name: EnergyDrink
+  m_Name: Cake
   m_EditorClassIdentifier: 
-  ingredientName: Drink
-  rank: 2
+  ingredientName: Cake
+  rank: 1
