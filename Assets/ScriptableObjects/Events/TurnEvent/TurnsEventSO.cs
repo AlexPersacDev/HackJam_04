@@ -21,15 +21,15 @@ public class TurnsEventSO : ScriptableObject
     {
         playersInGame.Add(playerRecived);
     }
-    public void StartGarage ()
-    {
-        if (firstInTurn != null)
-        {
-            firstInTurn.SwitchInTurn(true);
-            return;
-        }
-        playersInGame[0].SwitchInTurn(true);
-    }
+    // public void StartGarage ()
+    // {
+    //     if (firstInTurn != null)
+    //     {
+    //         firstInTurn.SwitchInTurn(true);
+    //         return;
+    //     }
+    //     playersInGame[0].SwitchInTurn(true);
+    // }
 
     private void TurnChanged ()
     {
