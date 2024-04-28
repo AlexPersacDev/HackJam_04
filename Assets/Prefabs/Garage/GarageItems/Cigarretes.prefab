@@ -816,6 +816,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredient: {fileID: 11400000, guid: 3a7773b2856b24c40b89f60751153123, type: 2}
+  gM: {fileID: 11400000, guid: dea6e79a57955ab4c87cbb042c0556eb, type: 2}
+  pickUpSound: {fileID: 8300000, guid: 65829ce6703b1df4683a6875371f0164, type: 3}
   objectOutline: {fileID: 0}
 --- !u!114 &650648582712485403
 MonoBehaviour:

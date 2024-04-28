@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Cinemachine;
 using Unity.VisualScripting;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -9,6 +10,8 @@ using Random = UnityEngine.Random;
 public class CarSpawner : MonoBehaviour
 {
     [SerializeField] private PlayerSO playerOne, playerTwo;
+    [SerializeField] private CinemachineVirtualCamera playerOneCam;
+    [SerializeField] private CinemachineVirtualCamera playerTwoCam;
     [SerializeField] private GameManagerSO gM;
     [SerializeField] private Transform playerOneCarPos;
     [SerializeField] private Transform playerTwoCarPos;
@@ -19,7 +22,7 @@ public class CarSpawner : MonoBehaviour
 
     private List<GameObject> usedCars = new List<GameObject>();
 
-    private List<Ranks> playerRank;
+    private List<Ranks> playerRank = new List<Ranks>();
 
     private void OnEnable ()
     {
@@ -40,9 +43,9 @@ public class CarSpawner : MonoBehaviour
         if (currentRank == Ranks.Good)
         {
             Transform targetTranform = playerRank.Count == 0 ? playerOneCarPos : playerTwoCarPos;
-            Instantiate(duckCar, targetTranform.position, Quaternion.identity);
+            GameObject copy = Instantiate(duckCar, targetTranform.position, Quaternion.identity);
             playerRank.Add(currentRank);
-            SetCarVar(duckCar, playerRank.Count);
+            SetCarVar(copy, playerRank.Count);
             usedCars.Add(duckCar);
             return;
         }
@@ -55,9 +58,9 @@ public class CarSpawner : MonoBehaviour
                 if (!usedCars.Contains(midCars[index]))
                 {
                     Transform targetTranform = playerRank.Count == 0 ? playerOneCarPos : playerTwoCarPos;
-                    Instantiate(midCars[index], targetTranform.position, Quaternion.identity);
+                    GameObject copy = Instantiate(midCars[index], targetTranform.position, Quaternion.identity);
                     playerRank.Add(currentRank);
-                    SetCarVar(midCars[index], playerRank.Count);
+                    SetCarVar(copy, playerRank.Count);
                     usedCars.Add(midCars[index]);
                     aux = !aux;
                     return;
@@ -74,9 +77,9 @@ public class CarSpawner : MonoBehaviour
                 if (!usedCars.Contains(baseCars[index]))
                 {
                     Transform targetTranform = playerRank.Count == 0 ? playerOneCarPos : playerTwoCarPos;
-                    Instantiate(baseCars[index], targetTranform.position, Quaternion.identity);
+                    GameObject copy = Instantiate(baseCars[index], targetTranform.position, Quaternion.identity);
                     playerRank.Add(currentRank);
-                    SetCarVar(baseCars[index], playerRank.Count);
+                    SetCarVar(copy, playerRank.Count);
                     usedCars.Add(baseCars[index]);
                     aux = !aux;
                     return;
@@ -90,9 +93,9 @@ public class CarSpawner : MonoBehaviour
             if (!usedCars.Contains(badCars[index]))
             {
                 Transform targetTranform = playerRank.Count == 0 ? playerOneCarPos : playerTwoCarPos;
-                Instantiate(badCars[index], targetTranform.position, Quaternion.identity);
+                GameObject copy = Instantiate(badCars[index], targetTranform.position, Quaternion.identity);
                 playerRank.Add(currentRank);
-                SetCarVar(badCars[index], playerRank.Count);
+                SetCarVar(copy, playerRank.Count);
                 usedCars.Add(badCars[index]);
                 aux = !aux;
                 return;
@@ -100,11 +103,22 @@ public class CarSpawner : MonoBehaviour
         }
     }
 
-    private void SetCarVar (GameObject currentcar, int playerIndex)
+    private void SetCarVar(GameObject currentcar, int playerIndex)
     {
         CarMain currentCarSc = currentcar.GetComponent<CarMain>();
 
         PlayerSO playerSo = playerIndex == 1 ? playerOne : playerTwo;
         currentCarSc.SetIDCar(playerSo);
+
+        if (playerSo == playerOne)
+        {
+            playerOneCam.Follow = currentCarSc.transform;
+            playerOneCam.LookAt = currentCarSc.transform;
+        }
+        else if (playerSo == playerTwo)
+        {
+            playerTwoCam.Follow = currentCarSc.transform;
+            playerTwoCam.LookAt = currentCarSc.transform;
+        }
     }
 }

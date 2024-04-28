@@ -6,7 +6,11 @@ using UnityEngine;
 public class Ingredient : MonoBehaviour, IInteractuable
 {
     [SerializeField] private IngredientsSO ingredient;
-    
+    [SerializeField]
+    private GameManagerSO gM;
+
+    [SerializeField]
+    private AudioClip pickUpSound;
     public Outline objectOutline;
 
     public static event Action<IngredientsSO> OnIngredientSelected;
@@ -39,10 +43,12 @@ public class Ingredient : MonoBehaviour, IInteractuable
     private void OnMouseDown ()
     {
         counter++;
-        if(counter == 3)
+        Debug.Log(counter);
+        if(counter > 3)
         {
             return;
         }
+        gM.PlayAudio(pickUpSound);
         ((IInteractuable)this).Interact();
     }
 }
