@@ -9,6 +9,9 @@ using UnityEngine.SceneManagement;
 [CreateAssetMenu(menuName ="GameManager")]
 public class GameManagerSO : ScriptableObject
 {
+    [SerializeField] private string playerOneGarageSceneName;
+    [SerializeField] private string RaceSceneName;
+    
     private List<PlayerSelector> players = new List<PlayerSelector>();
 
     private List<CarMain> carPlayers = new List<CarMain>();
@@ -51,11 +54,11 @@ public class GameManagerSO : ScriptableObject
 
     public async void GoToGarage ()
     {
-        SceneManager.LoadScene("Garage");
+        SceneManager.LoadScene(playerOneGarageSceneName);
 
         await Task.Delay(5000);
         
-        turnEvent.StartGarage();
+        //turnEvent.StartGarage();
     }
     private void ChangePlayerTurn()
     {

@@ -9,12 +9,15 @@ EditorBuildSettings:
     path: Assets/Scenes/FER.unity
     guid: 58a5975446c162e4c9e61384423554b4
   - enabled: 1
-    path: Assets/Scenes/GarajePl1.unity
-    guid: 92037402815d51e4ba8d3c76243723dd
-  - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
+    path: Assets/Scenes/FinalScenes/MainMenu.unity
     guid: 9f786124789981f4da00f90e89ed978b
   - enabled: 1
     path: Assets/Scenes/Garage.unity
     guid: a9639c9caa8335a42809381684ae4bbd
+  - enabled: 1
+    path: Assets/Scenes/GarajePl1.unity
+    guid: 92037402815d51e4ba8d3c76243723dd
+  - enabled: 1
+    path: Assets/Scenes/GarajePl2.unity
+    guid: 1f392b85fc51afe419530e8b7667aecc
   m_configObjects: {}
