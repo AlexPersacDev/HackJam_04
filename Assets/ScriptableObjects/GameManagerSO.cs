@@ -29,7 +29,6 @@ public class GameManagerSO : ScriptableObject
     private int totalLaps;
     
     //EVENTS------------
-    [SerializeField] private TurnsEventSO turnEvent;
     //-----------
 
     #region events
@@ -55,7 +54,7 @@ public class GameManagerSO : ScriptableObject
 
     private void OnEnable ()
     {
-        turnEvent.OnChangeTurn += ChangePlayerTurn;
+        
        // PlayerSelector.OnStartGame += RecivePlayerInGame;
     }
 
@@ -143,6 +142,6 @@ public class GameManagerSO : ScriptableObject
         checkpoints.Clear();
         carPlayers.Clear();
         //PlayerSelector.OnStartGame -= RecivePlayerInGame;
-        turnEvent.OnChangeTurn -= ChangePlayerTurn;
+        
     }
 }
