@@ -3565,6 +3565,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8334471383013253283, guid: f23d0192e8f70ee4a9bc35d4624ffa9a, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8334471383013253283, guid: f23d0192e8f70ee4a9bc35d4624ffa9a, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9129109617896487909, guid: f23d0192e8f70ee4a9bc35d4624ffa9a, type: 3}
       propertyPath: m_Name
       value: GameplayCanvas
@@ -3701,7 +3709,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4017002249978389636, guid: 9dd33f17a1320a348b78873cb52e25d3, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.104398526
+      value: -0.10439851
       objectReference: {fileID: 0}
     - target: {fileID: 4219332913410787965, guid: 9dd33f17a1320a348b78873cb52e25d3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3729,7 +3737,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5787313012597910198, guid: 9dd33f17a1320a348b78873cb52e25d3, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.104398526
+      value: -0.10439851
       objectReference: {fileID: 0}
     - target: {fileID: 6127461389675225337, guid: 9dd33f17a1320a348b78873cb52e25d3, type: 3}
       propertyPath: m_Name

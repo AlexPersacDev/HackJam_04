@@ -17,6 +17,10 @@ public class GameManagerSO : ScriptableObject
     private List<CarMain> carPlayers = new List<CarMain>();
     private List<Checkpoint> checkpoints = new List<Checkpoint>();
 
+    private List<Ranks> playerRanks = new List<Ranks>();
+    
+    public int playersReady;
+
     //---------
     [SerializeField]
     private int totalCheckPoints;
@@ -31,6 +35,7 @@ public class GameManagerSO : ScriptableObject
     #region events
     public event Action<CarMain> OnNewWinner;
     public event Action OnPlayerFinishedFormula;
+    public event Action<Ranks> OnInstanciatePlayerCar;
     #endregion
 
     public int TotalCheckPoints { get => totalCheckPoints; }
@@ -39,6 +44,8 @@ public class GameManagerSO : ScriptableObject
     public int TotalLaps { get => totalLaps; }
 
     private int nextCheckPointIndex;
+
+    public List<Ranks> PlayerRanks => playerRanks;
 
 
     //gm ordena a los coches en funci�n de los siguientes criterios:
@@ -49,7 +56,7 @@ public class GameManagerSO : ScriptableObject
     private void OnEnable ()
     {
         turnEvent.OnChangeTurn += ChangePlayerTurn;
-        PlayerSelector.OnStartGame += RecivePlayerInGame;
+       // PlayerSelector.OnStartGame += RecivePlayerInGame;
     }
 
     public async void GoToGarage ()
@@ -64,11 +71,11 @@ public class GameManagerSO : ScriptableObject
     {
         
     }
-    private void RecivePlayerInGame (PlayerSelector playerrecived)
-    {
-        if (!players.Contains(playerrecived)) players.Add(playerrecived);
-        turnEvent.FillPlayersInGame(playerrecived);
-    }
+    // private void RecivePlayerInGame (PlayerSelector playerrecived)
+    // {
+    //     if (!players.Contains(playerrecived)) players.Add(playerrecived);
+    //     turnEvent.FillPlayersInGame(playerrecived);
+    // }
     public void PlayerPassedCheckPoint(CarMain car)
     {
         CarCheckPointsSystem checkSystem = car.CheckPointsSystem;
@@ -127,15 +134,17 @@ public class GameManagerSO : ScriptableObject
         SceneManager.LoadScene(sceneIndex);
     }
 
-    public void PlayerFinishedFormula()
+    public void PlayerFinishedFormula(Ranks currentRank)
     {
+        playerRanks.Add(currentRank);
         OnPlayerFinishedFormula?.Invoke();
+        OnInstanciatePlayerCar?.Invoke(currentRank);
     }
     private void OnDisable()
     {
         checkpoints.Clear();
         carPlayers.Clear();
-        PlayerSelector.OnStartGame -= RecivePlayerInGame;
+        //PlayerSelector.OnStartGame -= RecivePlayerInGame;
         turnEvent.OnChangeTurn -= ChangePlayerTurn;
     }
 }
