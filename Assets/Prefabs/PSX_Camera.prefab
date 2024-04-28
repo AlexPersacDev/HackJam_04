@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7102530859442562922}
   - component: {fileID: 9024230039620794286}
   - component: {fileID: 8316212114859806315}
+  - component: {fileID: 1301157475395410107}
   m_Layer: 0
   m_Name: PSX_Camera
   m_TagString: Untagged
@@ -137,3 +138,19 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!114 &1301157475395410107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5032726694124780428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d33bb1b9f4999fb4898e791ae78b2cc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentCamera: {fileID: 7102530859442562922}
+  maxDistance: 20
+  maxCursor: {fileID: 0}
+  startCursor: {fileID: 0}

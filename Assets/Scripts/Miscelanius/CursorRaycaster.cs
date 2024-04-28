@@ -35,12 +35,18 @@ public class CursorRaycaster : MonoBehaviour
         {
             interacting = false;
             //ChangeScale();
-            if (currentIngredient != null) currentIngredient.objectOutline.enabled = false;
             return;
+        }
+
+        if (currentIngredient != null)
+        {
+            currentIngredient.objectOutline.enabled = false;
+            currentIngredient = null;
         }
 
         if (currentIngredient == null && hitInfo.transform.gameObject.CompareTag("Ingredient"))
         {
+            print("b");
             hitInfo.transform.gameObject.TryGetComponent<Ingredient>(out Ingredient ingredient);
             currentIngredient = ingredient;
             currentIngredient.objectOutline.enabled = true;
