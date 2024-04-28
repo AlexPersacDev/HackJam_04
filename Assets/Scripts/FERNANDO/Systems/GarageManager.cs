@@ -41,7 +41,13 @@ public class GarageManager : MonoBehaviour
     private void ActivateItems(GameObject[] array, string nameOfItem)
     {
         int numberOfItems = myPlayer.InventoryIngredients.Count((x) => x.IngredientName == nameOfItem);
-        Debug.Log(numberOfItems + " encontrados de " + nameOfItem);
+
+        //Se limita el número de items.
+        if(numberOfItems > array.Length)
+        {
+            numberOfItems = array.Length;
+        }
+
         for (int i = 0; i < numberOfItems; i++)
         {
             array[i].SetActive(true);
