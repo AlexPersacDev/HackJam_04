@@ -156,9 +156,13 @@ public class GameManagerSO : ScriptableObject
 
     public void CheckIfEndScreen ()
     {
-        if(currentRounds <= 3) LoadNewScene(2);
+        if (currentRounds <= 3)
+        {
+            LoadNewScene(1);
+            return;
+        }
         
-        else LoadNewScene(3);
+        else LoadNewScene(0);
     }
 
 }

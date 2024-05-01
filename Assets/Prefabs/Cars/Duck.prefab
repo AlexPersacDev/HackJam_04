@@ -5316,13 +5316,13 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   driveWheel:
-  - {fileID: 2387477058110114124, guid: f8399c5fb11dc7640af1f364615abd7e, type: 3}
-  - {fileID: 4503890484737372800, guid: f8399c5fb11dc7640af1f364615abd7e, type: 3}
-  - {fileID: 8812169880046696913, guid: f8399c5fb11dc7640af1f364615abd7e, type: 3}
-  - {fileID: 8372543499906165571, guid: f8399c5fb11dc7640af1f364615abd7e, type: 3}
+  - {fileID: 5454959242217334584}
+  - {fileID: 54862654857454293}
+  - {fileID: 5839834057120891702}
+  - {fileID: 1143753136164444149}
   turnWheel:
-  - {fileID: 2387477058110114124, guid: f8399c5fb11dc7640af1f364615abd7e, type: 3}
-  - {fileID: 4503890484737372800, guid: f8399c5fb11dc7640af1f364615abd7e, type: 3}
+  - {fileID: 5454959242217334584}
+  - {fileID: 54862654857454293}
   motorTorque:
     serializedVersion: 2
     m_Curve:
@@ -5362,14 +5362,14 @@ MonoBehaviour:
   steerSpeed: 0.97
   jumpVel: 1.1
   driftIntensity: 0.25
-  centerOfMass: {fileID: 3334768525084860477, guid: f8399c5fb11dc7640af1f364615abd7e, type: 3}
+  centerOfMass: {fileID: 4702929540374480701}
   downforce: 8
   handbrake: 1
   allowDrift: 1
   speed: 0
   gasParticles:
-  - {fileID: 4655090570664457865, guid: f8399c5fb11dc7640af1f364615abd7e, type: 3}
-  - {fileID: 7761965633735050356, guid: f8399c5fb11dc7640af1f364615abd7e, type: 3}
+  - {fileID: 16921312784010939}
+  - {fileID: 5700154392420118362}
   allowBoost: 1
   maxBoost: 17
   boost: 27

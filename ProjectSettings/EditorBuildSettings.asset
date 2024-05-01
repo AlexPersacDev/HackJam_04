@@ -14,7 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FinalScenes/GarajePl1 1.unity
     guid: c64ca17db655ad343aa2679d217017dc
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/FER.unity
     guid: 58a5975446c162e4c9e61384423554b4
   m_configObjects: {}

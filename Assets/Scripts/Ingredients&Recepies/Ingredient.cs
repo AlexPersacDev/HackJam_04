@@ -44,10 +44,7 @@ public class Ingredient : MonoBehaviour, IInteractuable
     {
         counter++;
         Debug.Log(counter);
-        if(counter > 3)
-        {
-            return;
-        }
+ 
         gM.PlayAudio(pickUpSound);
         ((IInteractuable)this).Interact();
     }
