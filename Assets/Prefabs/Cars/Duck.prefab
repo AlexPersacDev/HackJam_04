@@ -5364,7 +5364,7 @@ MonoBehaviour:
   driftIntensity: 0.25
   centerOfMass: {fileID: 4702929540374480701}
   downforce: 8
-  handbrake: 1
+  handbrake: 0
   allowDrift: 1
   speed: 0
   gasParticles:
@@ -5379,7 +5379,7 @@ MonoBehaviour:
   jumping: 0
   boostParticles: []
   boostClip: {fileID: 8300000, guid: 7c29c309722a2444582a425e8e6aeb77, type: 3}
-  boostSource: {fileID: 7490348450852311413, guid: f8399c5fb11dc7640af1f364615abd7e, type: 3}
+  boostSource: {fileID: 2282376031079743490}
 --- !u!114 &177231309428319247
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10800,7 +10800,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 8773335722026681070, guid: 3570148a033a58e44819eea5fc6cf70f, type: 3}
+  - {fileID: 2100000, guid: b8f37ff108ab269478e3152af74f22d3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
