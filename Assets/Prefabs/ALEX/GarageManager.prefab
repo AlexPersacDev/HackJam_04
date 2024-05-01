@@ -291,7 +291,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5d3bdfda36a3b749b4c087a200ae787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myPlayer: {fileID: 11400000, guid: 3979b41ae8b8b924a895857c21da0a18, type: 2}
+  myPlayer: {fileID: 11400000, guid: bec4ab5cfa6a03b478359d3cf329fd75, type: 2}
   cigarretes:
   - {fileID: 6472383436283568648}
   - {fileID: 5090010561735075754}
@@ -1300,7 +1300,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6198018056258879995, guid: 05369278478ae2f4d832340583f5329f, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6198018056258879995, guid: 05369278478ae2f4d832340583f5329f, type: 3}
       propertyPath: m_TagString
@@ -4612,6 +4612,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cerveza (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 6198018056258879995, guid: 05369278478ae2f4d832340583f5329f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7091647504457827866, guid: 05369278478ae2f4d832340583f5329f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.18
@@ -7376,7 +7380,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5127875054877788465, guid: 2ab482b3dca26f14689eefbaa78a429d, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5127875054877788465, guid: 2ab482b3dca26f14689eefbaa78a429d, type: 3}
       propertyPath: m_TagString
@@ -9626,7 +9630,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1580586226269057594, guid: 21dbb4190e7fdf645871fa92777a83b9, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1580586226269057594, guid: 21dbb4190e7fdf645871fa92777a83b9, type: 3}
       propertyPath: m_TagString
@@ -10154,7 +10158,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5127875054877788465, guid: 2ab482b3dca26f14689eefbaa78a429d, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5127875054877788465, guid: 2ab482b3dca26f14689eefbaa78a429d, type: 3}
       propertyPath: m_TagString

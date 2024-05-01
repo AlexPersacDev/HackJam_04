@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerOneGarageSceneName: GarajePl1
   RaceSceneName: 
-  playersReady: 0
+  playersReady: 3
   totalCheckPoints: 3
-  totalLaps: 1
+  totalLaps: 0
