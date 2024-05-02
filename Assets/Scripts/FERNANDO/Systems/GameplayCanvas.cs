@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
 
@@ -16,10 +17,12 @@ public class GameplayCanvas : MonoBehaviour
         gM.OnNewWinner += ShowWinnerText;
     }
 
-    private void ShowWinnerText(CarMain winner)
+    private async void ShowWinnerText(CarMain winner)
     {
         winnerText.gameObject.SetActive(true);
         winnerText.SetText("Player " + winner.PlayerNumber + " wins!");
+
+        await Task.Delay(3500);
         gM.CheckIfEndScreen();
         //Invoke(nameof(GarageReady), 2f);
     }

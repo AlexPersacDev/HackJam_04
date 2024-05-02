@@ -44,7 +44,7 @@ public class GarageCanvas : MonoBehaviour
     }
     public void ClicktwoButton ()
     {
-        SceneManager.LoadScene("FER");
+        SceneManager.LoadScene(0);
     }
 
     private void OnDisable()

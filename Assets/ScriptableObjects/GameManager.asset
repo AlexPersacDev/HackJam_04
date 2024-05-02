@@ -15,5 +15,5 @@ MonoBehaviour:
   playerOneGarageSceneName: GarajePl1
   RaceSceneName: 
   playersReady: 3
-  totalCheckPoints: 3
-  totalLaps: 0
+  totalCheckPoints: 20
+  totalLaps: 1
